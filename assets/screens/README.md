@@ -7,4 +7,4 @@ Coloque aqui os prints finais do app com estes nomes:
 - `player.jpeg`
 - `favoritos.jpeg`
 
-Se preferir, podem ser `.jpg` ou `.png`. Nesse caso, ajuste os `data-image` da seção de showcase em `index.html`.
+Se preferir, podem ser `.jpg` ou `.png`. Nesse caso, ajuste os `data-image` da secao de showcase em `index.html`.
