@@ -155,14 +155,14 @@ const enUS = {
   projectStory: {
     label: 'About the project',
     title: 'Who is behind Sonoriza.',
-    name: 'Joseilton Ferreira da Silva Junior',
+    name: 'Joseilton Ferreira Junior',
     role: 'Founder and developer of Sonoriza',
     badges: ['Recife, PE', 'Direct contact'],
     paragraphs: [
-      'I am Joseilton Ferreira da Silva Junior, founder and developer of Sonoriza. I have worked with software development since 2020 and started building the project foundation in 2023, when a local music player evolved into something bigger. Today I lead Sonoriza end to end, from architecture to the final app experience, based in Recife, Pernambuco.',
+      'I am Joseilton Ferreira Junior, founder and developer of Sonoriza. I have worked with software development since 2020 and started building the project foundation in 2023, when a local music player evolved into something bigger. Today I lead Sonoriza end to end, from architecture to the final app experience, based in Recife, Pernambuco.',
       'At this stage, you speak directly with me about authorization, material delivery, curation, and catalog entry. The proposal is to grow with real artists in a close, transparent way, with room for the local and regional scene.',
     ],
-    photoAlt: 'Photo of Joseilton Ferreira da Silva Junior',
+    photoAlt: 'Photo of Joseilton Ferreira Junior',
     links: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joseilton-junior/' },
       { label: 'Founder Instagram', href: 'https://www.instagram.com/dvlp.jr/' },
