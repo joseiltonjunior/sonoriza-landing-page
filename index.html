@@ -1643,6 +1643,52 @@
     color: var(--muted);
   }
 
+  .back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(168,85,247,0.24);
+    border-radius: 999px;
+    background:
+      linear-gradient(180deg, rgba(168,85,247,0.2), rgba(15,15,24,0.96)),
+      rgba(15,15,24,0.96);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 20px 44px rgba(0,0,0,0.28);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .back-to-top:hover {
+    border-color: rgba(168,85,247,0.42);
+    background:
+      linear-gradient(180deg, rgba(168,85,247,0.28), rgba(15,15,24,0.98)),
+      rgba(15,15,24,0.98);
+  }
+
+  .back-to-top:focus-visible {
+    outline: 2px solid rgba(192,132,252,0.72);
+    outline-offset: 3px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 
@@ -1680,6 +1726,7 @@
     .project-link,
     .footer-link,
     .footer-micro-link,
+    .back-to-top,
     .step {
       transition: none !important;
       transform: none !important;
@@ -1705,6 +1752,11 @@
     .footer-grid {
       grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(190px, 1fr));
       gap: 28px;
+    }
+
+    .back-to-top {
+      right: 20px;
+      bottom: 20px;
     }
   }
 
@@ -1929,6 +1981,13 @@
       margin-top: 24px;
       padding-top: 18px;
       align-items: flex-start;
+    }
+
+    .back-to-top {
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
     }
   }
 
@@ -2201,6 +2260,14 @@
     .footer-bottom-links {
       width: 100%;
       gap: 10px;
+    }
+
+    .back-to-top {
+      right: 14px;
+      bottom: 14px;
+      width: 44px;
+      height: 44px;
+      font-size: 18px;
     }
   }
 
@@ -2523,7 +2590,7 @@
 <section>
   <div class="section-label reveal">O modelo</div>
   <h2 class="section-title reveal">Honesto sobre<br>o que somos.</h2>
-  <p class="section-body reveal">Este é um projeto piloto. Não temos promessas impossíveis - temos um produto real, em construção, buscando artistas reais para crescer junto.</p>
+  <p class="section-body reveal">Este é um projeto piloto. Não temos promessas impossíveis - temos um produto real, em construção, buscando artistas reais para crescer junto. Nesta fase, a proposta é trabalhar com músicas que o próprio artista deseja disponibilizar gratuitamente para o público dentro do Sonoriza.</p>
 
   <div class="model-grid reveal">
     <div class="model-card yes">
@@ -2534,6 +2601,7 @@
         <li>Plataforma de streaming com app Android funcionando</li>
         <li>Recomendações personalizadas por gênero e histórico</li>
         <li>Catálogo curado, não distribuição em massa</li>
+        <li>Canal para músicas autorizadas pelo artista e disponibilizadas gratuitamente no app</li>
         <li>Entrada antecipada no catálogo piloto</li>
         <li>Possibilidade de reconhecimento como artista pioneiro</li>
         <li>Você autoriza, pode remover quando quiser</li>
@@ -2578,6 +2646,11 @@
     <details class="faq-item">
       <summary>O Sonoriza é uma distribuidora musical?</summary>
       <div class="faq-answer">Não. O Sonoriza é um app de streaming e reprodução musical, pensado especialmente para a experiência mobile. Nesta fase, a proposta é disponibilizar o conteúdo diretamente dentro do próprio Sonoriza, como mais um canal de presença e escuta para o usuário final.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Como funciona o acesso às músicas no Sonoriza?</summary>
+      <div class="faq-answer">Nesta fase, a proposta é receber músicas que o próprio artista autoriza disponibilizar gratuitamente no app. O Sonoriza funciona como plataforma de reprodução e descoberta desse catálogo autorizado, sem se apropriar do conteúdo.</div>
     </details>
 
     <details class="faq-item">
@@ -2714,8 +2787,13 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo">
+  &uarr;
+</button>
+
 <script>
   const nav = document.querySelector('nav');
+  const backToTop = document.getElementById('backToTop');
   const showcase = document.getElementById('appShowcase');
   const showcaseSlides = Array.from(document.querySelectorAll('.showcase-slide'));
   const showcaseDots = document.getElementById('showcaseDots');
@@ -2760,10 +2838,15 @@
   };
 
   function updateNavVisibility() {
-    if (!nav) return;
-
     const shouldHide = window.scrollY > window.innerHeight * 0.15;
-    nav.classList.toggle('nav-hidden', shouldHide);
+
+    if (nav) {
+      nav.classList.toggle('nav-hidden', shouldHide);
+    }
+
+    if (backToTop) {
+      backToTop.classList.toggle('visible', shouldHide);
+    }
   }
   // Sound wave generator
   const sw = document.getElementById('soundwave');
@@ -2789,6 +2872,13 @@
   updateNavVisibility();
   window.addEventListener('scroll', updateNavVisibility, { passive: true });
   window.addEventListener('resize', updateNavVisibility);
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+  }
 
   // -- App showcase
   let showcaseIndex = 0;
