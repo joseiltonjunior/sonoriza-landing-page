@@ -47,6 +47,7 @@
     --border: rgba(168,85,247,0.15);
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
+    --showcase-progress-duration: 5000ms;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -146,6 +147,7 @@
     left: 50%;
     transform: translate(-50%, -55%);
     pointer-events: none;
+    animation: glowDriftPrimary 14s ease-in-out infinite;
   }
 
   .hero-glow2 {
@@ -156,6 +158,7 @@
     bottom: 0;
     right: -100px;
     pointer-events: none;
+    animation: glowDriftSecondary 16s ease-in-out infinite;
   }
 
   /* Sound wave decorative */
@@ -301,6 +304,51 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes glowDriftPrimary {
+    0%, 100% { transform: translate(-50%, -55%) scale(1); opacity: 0.95; }
+    50% { transform: translate(-47%, -51%) scale(1.06); opacity: 1; }
+  }
+
+  @keyframes glowDriftSecondary {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
+    50% { transform: translate3d(-18px, 14px, 0) scale(1.08); opacity: 1; }
+  }
+
+  @keyframes ambientFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes contentRefreshIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes dotProgress {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes cardCascadeIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes faqReveal {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  @keyframes successPop {
+    from { opacity: 0; transform: scale(0.72); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
   /* DIVIDER */
   .divider {
     width: 100%;
@@ -384,6 +432,7 @@
       linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
       rgba(15,15,24,0.92);
     box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
 
   .app-showcase-meta {
@@ -401,6 +450,7 @@
     font-size: clamp(22px, 2.8vw, 34px);
     font-weight: 800;
     line-height: 1.1;
+    min-height: 2.2em;
     letter-spacing: -0.02em;
     margin-bottom: 12px;
   }
@@ -409,6 +459,18 @@
     font-size: 16px;
     color: rgba(248,244,255,0.58);
     line-height: 1.8;
+  }
+
+  .app-showcase-panel.is-transitioning .app-showcase-meta {
+    animation: contentRefreshIn 0.35s ease both;
+  }
+
+  .app-showcase-panel.is-transitioning .app-showcase-screen-title {
+    animation: contentRefreshIn 0.42s ease 0.04s both;
+  }
+
+  .app-showcase-panel.is-transitioning .app-showcase-screen-text {
+    animation: contentRefreshIn 0.48s ease 0.08s both;
   }
 
   .app-showcase-nav {
@@ -464,6 +526,252 @@
     line-height: 1.8;
   }
 
+  .value-section,
+  .pioneer-section,
+  .project-story,
+  .faq-section {
+    max-width: 1240px;
+  }
+
+  .value-grid,
+  .pioneer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 48px;
+  }
+
+  .value-card,
+  .pioneer-card {
+    padding: 28px 24px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+      rgba(15,15,24,0.92);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  }
+
+  .value-card:hover,
+  .pioneer-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168,85,247,0.3);
+    background:
+      linear-gradient(180deg, rgba(168,85,247,0.07), rgba(255,255,255,0.01)),
+      rgba(15,15,24,0.94);
+    box-shadow: 0 28px 72px rgba(0,0,0,0.26);
+  }
+
+  .value-card-title,
+  .pioneer-card-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .value-card-text,
+  .pioneer-card-text {
+    font-size: 15px;
+    color: rgba(248,244,255,0.58);
+    line-height: 1.75;
+  }
+
+  .pioneer-intro {
+    max-width: 760px;
+  }
+
+  .project-story-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+    gap: clamp(36px, 6vw, 72px);
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  .founder-profile {
+    padding: 26px;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+      rgba(15,15,24,0.92);
+    box-shadow: 0 28px 72px rgba(0,0,0,0.24);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .founder-profile:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168,85,247,0.28);
+    box-shadow: 0 34px 78px rgba(0,0,0,0.28);
+  }
+
+  .showcase-cta-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168,85,247,0.28);
+    box-shadow: 0 34px 84px rgba(0,0,0,0.28);
+  }
+
+  .founder-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #13131a;
+  }
+
+  .founder-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-top: 20px;
+  }
+
+  .founder-role {
+    margin-top: 8px;
+    font-size: 15px;
+    color: rgba(248,244,255,0.62);
+  }
+
+  .project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .project-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: rgba(248,244,255,0.72);
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .project-badge img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+  }
+
+  .project-story-copy .section-title,
+  .project-story-copy .section-body {
+    max-width: 720px;
+  }
+
+  .project-link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    transition: all 0.25s ease;
+  }
+
+  .project-link:hover {
+    transform: translateY(-1px);
+    border-color: rgba(168,85,247,0.35);
+    background: rgba(168,85,247,0.12);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 48px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+      rgba(15,15,24,0.92);
+    overflow: hidden;
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168,85,247,0.22);
+  }
+
+  .faq-item[open] {
+    border-color: rgba(168,85,247,0.3);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 24px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: var(--purple-light);
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 0 24px 22px;
+    color: rgba(248,244,255,0.58);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .faq-item[open] .faq-answer {
+    animation: faqReveal 0.3s ease both;
+  }
+
   .showcase-arrow {
     width: 48px;
     height: 48px;
@@ -490,19 +798,34 @@
   }
 
   .showcase-dot {
+    position: relative;
     width: 10px;
     height: 10px;
     border-radius: 999px;
     border: none;
     background: rgba(248,244,255,0.18);
     cursor: pointer;
+    overflow: hidden;
     transition: width 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+
+  .showcase-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--purple-deep), var(--purple-light));
   }
 
   .showcase-dot.active {
     width: 32px;
-    background: linear-gradient(135deg, var(--purple-deep), var(--purple-light));
+    background: rgba(168,85,247,0.18);
     transform: translateY(-1px);
+  }
+
+  .showcase-dot.active::after {
+    animation: dotProgress var(--showcase-progress-duration) linear forwards;
   }
 
   .app-showcase-device-wrap {
@@ -520,12 +843,15 @@
     background: radial-gradient(circle, rgba(123,47,190,0.24) 0%, rgba(123,47,190,0.06) 52%, transparent 72%);
     filter: blur(10px);
     pointer-events: none;
+    animation: glowDriftSecondary 10s ease-in-out infinite;
   }
 
   .phone-shell {
     position: relative;
     width: min(100%, 336px);
     aspect-ratio: 390 / 710;
+    animation: ambientFloat 7s ease-in-out infinite;
+    will-change: transform;
   }
 
   .phone-device {
@@ -685,7 +1011,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center top;
     border-radius: 30px;
     background: #111019;
@@ -760,9 +1086,12 @@
     background: var(--bg2);
     padding: 44px 36px;
     position: relative;
-    transition: background 0.3s;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   }
-  .step:hover { background: rgba(123,47,190,0.08); }
+  .step:hover {
+    background: rgba(123,47,190,0.08);
+    transform: translateY(-4px);
+  }
 
   .step-num {
     font-family: var(--font-display);
@@ -807,10 +1136,16 @@
     border-radius: 16px;
     border: 1px solid var(--border);
     background: var(--bg2);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
   }
 
   .model-card.yes { border-color: rgba(168,85,247,0.3); }
   .model-card.no { border-color: rgba(255,255,255,0.06); }
+
+  .model-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 58px rgba(0,0,0,0.22);
+  }
 
   .model-card-header {
     display: flex;
@@ -900,6 +1235,13 @@
     background:
       linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
       rgba(15,15,24,0.88);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-trust-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168,85,247,0.26);
+    box-shadow: 0 22px 48px rgba(0,0,0,0.2);
   }
 
   .contact-trust-title {
@@ -926,6 +1268,7 @@
     text-align: left;
     position: relative;
     overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
 
   .form-card::before {
@@ -934,6 +1277,12 @@
     top: 0; left: 0; right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(168,85,247,0.5), transparent);
+  }
+
+  .form-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168,85,247,0.24);
+    box-shadow: 0 28px 64px rgba(0,0,0,0.22);
   }
 
   .form-group {
@@ -1012,6 +1361,8 @@
     width: 100%;
     margin-top: 8px;
     padding: 18px;
+    position: relative;
+    overflow: hidden;
     font-family: var(--font-display);
     font-size: 14px;
     font-weight: 700;
@@ -1035,6 +1386,25 @@
     transform: none;
   }
 
+  .btn-submit::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.28);
+    border-top-color: rgba(255,255,255,0.92);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn-submit.is-loading::after {
+    opacity: 1;
+    animation: spin 0.7s linear infinite;
+  }
+
   /* Success state */
   .form-success {
     display: none;
@@ -1043,7 +1413,10 @@
   }
   .form-success.show { display: block; }
   .form-card.sent .form-fields { display: none; }
-  .form-card.sent .form-success { display: block; }
+  .form-card.sent .form-success {
+    display: block;
+    animation: contentRefreshIn 0.45s ease both;
+  }
 
   .success-icon {
     width: 64px;
@@ -1056,6 +1429,10 @@
     justify-content: center;
     margin: 0 auto 24px;
     font-size: 28px;
+  }
+
+  .form-card.sent .success-icon {
+    animation: successPop 0.55s cubic-bezier(0.2, 0.9, 0.2, 1.2) 0.08s both;
   }
 
   .success-title {
@@ -1084,14 +1461,20 @@
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
-    padding: 40px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
+    padding: 52px 40px 36px;
+    max-width: 1240px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 16px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(180px, 0.75fr) minmax(220px, 0.9fr);
+    gap: 32px;
+    align-items: start;
+  }
+
+  .footer-brand {
+    max-width: 480px;
   }
 
   .footer-logo {
@@ -1106,9 +1489,179 @@
     background-clip: text;
   }
 
+  .footer-blurb {
+    margin-top: 16px;
+    color: rgba(248,244,255,0.58);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .footer-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .footer-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: rgba(248,244,255,0.72);
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-heading {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--purple-pale);
+    margin-bottom: 6px;
+  }
+
+  .footer-link {
+    color: rgba(248,244,255,0.72);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--white);
+    transform: translateX(2px);
+  }
+
+  .footer-link-strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .footer-contact-text {
+    color: rgba(248,244,255,0.58);
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 2px;
+  }
+
+  .footer-social-row,
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-micro-link {
+    color: rgba(248,244,255,0.52);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.25s ease;
+  }
+
+  .footer-micro-link:hover {
+    color: rgba(248,244,255,0.82);
+  }
+
+  .value-grid.visible .value-card,
+  .pioneer-grid.visible .pioneer-card,
+  .contact-trust-grid.visible .contact-trust-card,
+  .faq-list.visible .faq-item {
+    animation: cardCascadeIn 0.55s ease both;
+  }
+
+  .value-grid.visible > :nth-child(2),
+  .pioneer-grid.visible > :nth-child(2),
+  .contact-trust-grid.visible > :nth-child(2),
+  .faq-list.visible > :nth-child(2) {
+    animation-delay: 0.06s;
+  }
+
+  .value-grid.visible > :nth-child(3),
+  .pioneer-grid.visible > :nth-child(3),
+  .contact-trust-grid.visible > :nth-child(3),
+  .faq-list.visible > :nth-child(3) {
+    animation-delay: 0.12s;
+  }
+
+  .value-grid.visible > :nth-child(4),
+  .pioneer-grid.visible > :nth-child(4),
+  .contact-trust-grid.visible > :nth-child(4),
+  .faq-list.visible > :nth-child(4) {
+    animation-delay: 0.18s;
+  }
+
+  .faq-list.visible > :nth-child(5) { animation-delay: 0.24s; }
+  .faq-list.visible > :nth-child(6) { animation-delay: 0.3s; }
+
   .footer-note {
     font-size: 13px;
     color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .hero-glow,
+    .hero-glow2,
+    .soundwave span,
+    .phone-shell,
+    .app-showcase-device-wrap::before,
+    .showcase-dot.active::after,
+    .app-showcase-panel.is-transitioning .app-showcase-meta,
+    .app-showcase-panel.is-transitioning .app-showcase-screen-title,
+    .app-showcase-panel.is-transitioning .app-showcase-screen-text,
+    .faq-item[open] .faq-answer,
+    .form-card.sent .form-success,
+    .form-card.sent .success-icon,
+    .value-grid.visible .value-card,
+    .pioneer-grid.visible .pioneer-card,
+    .contact-trust-grid.visible .contact-trust-card,
+    .faq-list.visible .faq-item,
+    .btn-submit.is-loading::after {
+      animation: none !important;
+    }
+
+    .reveal,
+    .showcase-slide,
+    .showcase-arrow,
+    .showcase-dot,
+    .value-card,
+    .pioneer-card,
+    .founder-profile,
+    .model-card,
+    .contact-trust-card,
+    .form-card,
+    .showcase-cta-card,
+    .project-link,
+    .footer-link,
+    .footer-micro-link,
+    .step {
+      transition: none !important;
+      transform: none !important;
+    }
   }
 
   /* RESPONSIVE */
@@ -1123,6 +1676,14 @@
     }
     .showcase-cta-card { padding: 30px 28px; }
     .model-grid { gap: 24px; }
+    .project-story-grid {
+      grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+      gap: 32px;
+    }
+    .footer-grid {
+      grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(190px, 1fr));
+      gap: 28px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -1253,6 +1814,40 @@
       text-align: center;
     }
 
+    .value-grid,
+    .pioneer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .value-card,
+    .pioneer-card {
+      padding: 24px 20px;
+      border-radius: 20px;
+    }
+
+    .project-story-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .founder-profile {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .project-story-copy .section-title,
+    .project-story-copy .section-body {
+      max-width: none;
+    }
+
+    .project-link-row {
+      margin-top: 24px;
+    }
+
     .phone-shell { width: min(100%, 322px); }
     .app-showcase-device-wrap::before { width: 300px; height: 300px; }
 
@@ -1271,6 +1866,23 @@
 
     .model-card { padding: 28px 24px; }
 
+    .faq-list {
+      margin-top: 40px;
+    }
+
+    .faq-item summary {
+      padding: 20px 20px;
+      font-size: 17px;
+    }
+
+    .faq-item summary::after {
+      right: 20px;
+    }
+
+    .faq-answer {
+      padding: 0 20px 20px;
+    }
+
     .contact-trust-grid { grid-template-columns: 1fr; }
 
     .contact-trust-card { padding: 16px 16px 14px; }
@@ -1282,10 +1894,19 @@
 
     .form-row { grid-template-columns: 1fr; }
 
-    footer {
-      padding: 32px 20px;
-      flex-direction: column;
-      text-align: center;
+    footer { padding: 40px 20px 28px; }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .footer-brand { max-width: none; }
+
+    .footer-bottom {
+      margin-top: 24px;
+      padding-top: 18px;
+      align-items: flex-start;
     }
   }
 
@@ -1407,6 +2028,90 @@
 
     .model-card { padding: 24px 20px; }
 
+    .value-grid,
+    .pioneer-grid {
+      grid-template-columns: 1fr;
+      margin-top: 32px;
+    }
+
+    .value-card,
+    .pioneer-card {
+      padding: 20px 16px;
+      border-radius: 18px;
+    }
+
+    .value-card-title,
+    .pioneer-card-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .value-card-text,
+    .pioneer-card-text {
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .founder-profile {
+      padding: 18px;
+      border-radius: 22px;
+    }
+
+    .founder-photo {
+      border-radius: 18px;
+    }
+
+    .founder-name {
+      font-size: 24px;
+      margin-top: 16px;
+    }
+
+    .founder-role {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .project-badges {
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .project-badge {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+
+    .project-link-row {
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .project-link {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 11px;
+    }
+
+    .faq-item {
+      border-radius: 18px;
+    }
+
+    .faq-item summary {
+      padding: 18px 16px;
+      font-size: 16px;
+    }
+
+    .faq-item summary::after {
+      right: 16px;
+      font-size: 20px;
+    }
+
+    .faq-answer {
+      padding: 0 16px 18px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
     .form-card { padding: 30px 18px; }
 
     input,
@@ -1417,6 +2122,16 @@
     }
 
     .success-title { font-size: 22px; }
+
+    .footer-blurb {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-chip {
+      font-size: 11px;
+      padding: 9px 12px;
+    }
   }
 
   @media (max-width: 400px) {
@@ -1447,11 +2162,24 @@
 
     .app-showcase-screen-title { font-size: 15px; }
 
+    .founder-name {
+      font-size: 21px;
+    }
+
+    .project-badge {
+      width: 100%;
+      justify-content: center;
+    }
+
     .phone-shell { width: min(100%, 284px); }
 
     .contact-trust-title { letter-spacing: 0.09em; }
 
     .footer-note { font-size: 12px; }
+    .footer-bottom-links {
+      width: 100%;
+      gap: 10px;
+    }
   }
 
   /* SCROLL REVEAL */
@@ -1471,7 +2199,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Sonoriza</div>
-  <a href="#contato" class="nav-cta">Quero participar</a>
+  <a href="#contato" class="nav-cta">Autorizar catálogo</a>
 </nav>
 
 <!-- HERO -->
@@ -1479,19 +2207,19 @@
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
-  <div class="hero-badge">Convite para artistas independentes</div>
+  <div class="hero-badge">Convite para artistas independentes e regionais</div>
 
   <h1 class="hero-title">
     Seu som<br>merece ser<br><em>ouvido.</em>
   </h1>
 
   <p class="hero-sub">
-    O Sonoriza é um app de streaming em fase piloto, com catálogo em curadoria e evolução contínua. Estamos abrindo espaço para artistas que queiram autorizar suas músicas no app.
+    O Sonoriza é um app de streaming independente em fase piloto, feito em Recife, com catálogo em curadoria e espaço aberto para artistas que queiram entrar cedo, falar direto com o fundador e ajudar a formar o catálogo inicial.
   </p>
 
   <div class="hero-actions">
-    <a href="#contato" class="btn-primary">Quero fazer parte</a>
-    <a href="#como-funciona" class="btn-ghost">Entender o modelo &rarr;</a>
+    <a href="#contato" class="btn-primary">Quero autorizar meu catálogo</a>
+    <a href="#pioneiros" class="btn-ghost">Quero entrar como pioneiro &rarr;</a>
   </div>
 
   <!-- sound wave decoration -->
@@ -1501,11 +2229,11 @@
 <div class="divider"></div>
 
 <!-- O QUE É -->
-<section class="reveal">
+<section class="reveal" id="sobre">
   <div class="section-label">Sobre o Sonoriza</div>
-  <h2 class="section-title">Mais que música,<br>cultura.</h2>
+  <h2 class="section-title">Streaming independente,<br>com base no Recife.</h2>
   <p class="section-body">
-    O Sonoriza começou como um player local e hoje já funciona como um app de streaming em evolução, com recomendações, exploração por gênero, histórico, favoritos e catálogo curado. Nesta fase, queremos construir o piloto com artistas reais e autorização direta.
+    O Sonoriza começou em 2023 como um reprodutor local e evoluiu para um app de streaming com recomendações, exploração por gênero, histórico, favoritos e catálogo curado. Nesta fase, a proposta é construir o catálogo inicial com artistas reais, autorização direta e proximidade com a cena local e regional.
   </p>
 </section>
 
@@ -1523,7 +2251,7 @@
 
       <div class="app-showcase-panel">
         <div class="app-showcase-meta" id="appShowcaseMeta">Tela 01 - Login</div>
-        <h3 class="app-showcase-screen-title" id="appShowcaseTitle">Entrada e conta real</h3>
+        <h3 class="app-showcase-screen-title" id="appShowcaseTitle">Login e acesso</h3>
         <p class="app-showcase-screen-text" id="appShowcaseDescription">
           O app já conta com fluxo de login e acesso, reforçando que o Sonoriza não é só conceito visual: existe uma base funcional em andamento.
         </p>
@@ -1551,7 +2279,7 @@
               <article
                 class="showcase-slide active"
                 data-meta="Tela 01 - Login"
-                data-title="Entrada e conta real"
+                data-title="Login e acesso"
                 data-description="O app já conta com fluxo de login e acesso, reforçando que o Sonoriza não é só conceito visual: existe uma base funcional em andamento."
                 data-image="assets/screens/login.jpeg"
               >
@@ -1565,8 +2293,8 @@
               <article
                 class="showcase-slide"
                 data-meta="Tela 02 - Início"
-                data-title="Home com retomada e descoberta"
-                data-description="A home prova um app vivo: tocados recentemente, mixes inspirados e mini-player ativo na navegação principal."
+                data-title="Home e descoberta"
+                data-description="A home prova um app vivo: tocados recentemente, mixes inspirados, retomada de reprodução e mini-player ativo na navegação principal."
                 data-image="assets/screens/home.jpeg"
               >
                 <div class="showcase-slide-fallback">
@@ -1593,7 +2321,7 @@
               <article
                 class="showcase-slide"
                 data-meta="Tela 04 - Artista"
-                data-title="Página dedicada para artista"
+                data-title="Página do artista"
                 data-description="A tela do artista mostra estrutura própria para catálogo, top músicas e discografia, o que ajuda a apresentar o Sonoriza como produto e não só como player."
                 data-image="assets/screens/artista.jpeg"
               >
@@ -1607,7 +2335,7 @@
               <article
                 class="showcase-slide"
                 data-meta="Tela 05 - Player"
-                data-title="Experiência completa de reprodução"
+                data-title="Playback completo"
                 data-description="O player cheio evidencia controles, progresso da faixa, favoritos e uma experiência mais robusta de consumo dentro do app."
                 data-image="assets/screens/player.jpeg"
               >
@@ -1643,10 +2371,92 @@
   <div class="showcase-cta-card">
     <div>
       <div class="showcase-cta-label">Próximo passo</div>
-      <h3 class="showcase-cta-title">Seu catálogo pode fazer parte dessa experiência.</h3>
-      <p class="showcase-cta-text">Se fizer sentido para você, o próximo passo é simples: falar com a equipe do Sonoriza e alinhar autorização, catálogo e entrada no piloto.</p>
+      <h3 class="showcase-cta-title">Seu catálogo pode entrar cedo nessa história.</h3>
+      <p class="showcase-cta-text">Se o projeto fizer sentido para você, este é o momento de conversar diretamente com quem constrói o Sonoriza, entender a autorização e avaliar sua entrada como artista pioneiro do catálogo inicial.</p>
     </div>
-    <a href="#contato" class="btn-primary">Quero conversar com a equipe</a>
+    <a href="#contato" class="btn-primary">Quero conversar sobre o piloto</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- POR QUE AGORA -->
+<section class="value-section" id="por-que-agora">
+  <div class="section-label reveal">Por que agora</div>
+  <h2 class="section-title reveal">Por que vale entrar nesta fase?</h2>
+  <p class="section-body reveal">Nesta etapa, a proposta não é só disponibilizar música no app. É entrar cedo, com contato direto, ajudar a formar o catálogo e ser lembrado por isso.</p>
+
+  <div class="value-grid reveal">
+    <div class="value-card">
+      <div class="value-card-title">Catálogo em formação</div>
+      <p class="value-card-text">Quem entra agora participa da fase em que o catálogo inicial ainda está sendo construído e ajuda a moldar o começo do Sonoriza.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-card-title">Contato direto com o fundador</div>
+      <p class="value-card-text">Você fala com quem desenha o produto, conduz a curadoria e faz a ingestão do material nesta fase do projeto.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-card-title">Entrada assistida</div>
+      <p class="value-card-text">Não existe painel, integração ou burocracia para configurar agora. O processo é manual, acompanhado e simples para o artista.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-card-title">Reconhecimento no app</div>
+      <p class="value-card-text">Artistas que entram cedo podem receber identificação simbólica de pioneiro e aparecer em áreas de destaque dedicadas dentro do Sonoriza.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PIONEIROS -->
+<section class="pioneer-section" id="pioneiros">
+  <div class="section-label reveal">Artistas pioneiros</div>
+  <h2 class="section-title reveal">Quem entrar agora ajuda a construir o começo.</h2>
+  <p class="section-body pioneer-intro reveal">Os artistas que participarem desta fase inicial do Sonoriza podem receber reconhecimento simbólico como pioneiros do projeto, com selo no app, possibilidade de destaque em espaços dedicados e um agradecimento especial pela confiança nesse início.</p>
+
+  <div class="pioneer-grid reveal">
+    <div class="pioneer-card">
+      <div class="pioneer-card-title">Selo de pioneiro</div>
+      <p class="pioneer-card-text">Uma identificação simbólica para marcar os artistas que confiaram no Sonoriza ainda na fase inicial do catálogo.</p>
+    </div>
+    <div class="pioneer-card">
+      <div class="pioneer-card-title">Área de destaque</div>
+      <p class="pioneer-card-text">Os pioneiros podem ser incluídos em áreas editoriais de destaque dentro do app e da comunicação do projeto.</p>
+    </div>
+    <div class="pioneer-card">
+      <div class="pioneer-card-title">Agradecimento simbólico</div>
+      <p class="pioneer-card-text">Além do reconhecimento no produto, a ideia é registrar essa participação inicial com um item simbólico de agradecimento, conforme disponibilidade.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SOBRE O PROJETO -->
+<section class="project-story" id="sobre-projeto">
+  <div class="section-label reveal">Sobre o projeto</div>
+  <div class="project-story-grid">
+    <div class="founder-profile reveal">
+      <img class="founder-photo" src="assets/screens/me.jpeg" alt="Foto de Joseilton Ferreira Junior">
+      <div class="founder-name">Joseilton Ferreira Junior</div>
+      <div class="founder-role">Fundador e desenvolvedor do Sonoriza</div>
+      <div class="project-badges">
+        <span class="project-badge">Recife, PE</span>
+        <span class="project-badge">Contato direto</span>
+      </div>
+    </div>
+
+    <div class="project-story-copy reveal">
+      <h2 class="section-title">Quem está por trás do Sonoriza.</h2>
+      <p class="section-body">Sou Joseilton Ferreira Junior, fundador e desenvolvedor do Sonoriza. Trabalho com desenvolvimento de software desde 2020 e comecei a construir a base do projeto em 2023, quando um reprodutor local de música evoluiu para algo maior. Hoje conduzo o Sonoriza de ponta a ponta, da arquitetura até a experiência final do app, com base em Recife, Pernambuco.</p>
+      <p class="section-body">Nesta fase, você conversa diretamente comigo sobre autorização, envio de materiais, curadoria e entrada no catálogo. A proposta é crescer com artistas reais, de forma próxima, transparente e com espaço para a cena local e regional.</p>
+
+      <div class="project-link-row">
+        <a class="project-link" href="https://www.linkedin.com/in/joseilton-junior/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="project-link" href="https://www.instagram.com/dvlp.jr/" target="_blank" rel="noreferrer">Instagram do fundador</a>
+        <a class="project-link" href="https://www.instagram.com/sonoriza.sound/" target="_blank" rel="noreferrer">Instagram do Sonoriza</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1662,19 +2472,19 @@
       <div class="step-num">01</div>
       <span class="step-icon">&#9993;</span>
       <div class="step-title">Você entra em contato</div>
-      <p class="step-text">Preencha o formulário com seus dados e contexto. A equipe do Sonoriza entra em contato para alinhar autorização, catálogo e próximos passos.</p>
+      <p class="step-text">Preencha o formulário com seus dados e contexto. Nesta fase, o contato é direto com o fundador para alinhar autorização, catálogo e próximos passos.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <span class="step-icon">&#9881;</span>
-      <div class="step-title">Seu som entra no app</div>
-      <p class="step-text">Com a autorização alinhada, a ingestão do conteúdo é feita manualmente pela equipe do Sonoriza. Neste momento, você não precisa subir arquivos nem usar painel.</p>
+      <div class="step-title">Alinhamos autorização e materiais</div>
+      <p class="step-text">Depois do contato, alinhamos a autorização e o que precisa ser enviado: faixas, capa, foto do artista, gêneros e informações básicas do catálogo.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <span class="step-icon">&#9654;</span>
-      <div class="step-title">Seu catálogo entra no app</div>
-      <p class="step-text">O conteúdo autorizado passa a fazer parte do catálogo do Sonoriza durante a fase piloto, dentro da experiência real do app.</p>
+      <div class="step-title">Seu catálogo entra no Sonoriza</div>
+      <p class="step-text">Com tudo aprovado, a ingestão é feita manualmente e o conteúdo autorizado passa a fazer parte do catálogo do Sonoriza durante a fase piloto.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
@@ -1703,8 +2513,9 @@
         <li>Recomendações personalizadas por gênero e histórico</li>
         <li>Catálogo curado, não distribuição em massa</li>
         <li>Entrada antecipada no catálogo piloto</li>
+        <li>Possibilidade de reconhecimento como artista pioneiro</li>
         <li>Você autoriza, pode remover quando quiser</li>
-        <li>Piloto real, sem promessa de viralização</li>
+        <li>Contato direto com o fundador nesta fase</li>
       </ul>
     </div>
     <div class="model-card no">
@@ -1725,28 +2536,69 @@
 
 <div class="divider"></div>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label reveal">FAQ</div>
+  <h2 class="section-title reveal">Dúvidas comuns antes do contato.</h2>
+  <p class="section-body reveal">O objetivo aqui é deixar claro o que faz sentido nesta fase e o que acontece depois que você fala com o Sonoriza.</p>
+
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Quem pode participar desta fase?</summary>
+      <div class="faq-answer">Qualquer artista que queira autorizar a disponibilização do seu conteúdo no Sonoriza e participar da fase inicial do catálogo. Artistas independentes são especialmente bem-vindos nesta etapa.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>O que preciso enviar no primeiro contato?</summary>
+      <div class="faq-answer">No primeiro momento, o ideal é enviar uma descrição breve do que você quer disponibilizar. Depois do alinhamento, podem ser solicitados arquivos das músicas, capa, foto do artista, nome artístico e gêneros.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>O Sonoriza é uma distribuidora musical?</summary>
+      <div class="faq-answer">Não. O Sonoriza é um app de streaming e reprodução musical, pensado especialmente para a experiência mobile. Nesta fase, a proposta é disponibilizar o conteúdo diretamente dentro do próprio Sonoriza, como mais um canal de presença e escuta para o usuário final.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Existe custo para participar?</summary>
+      <div class="faq-answer">Não. O contato inicial é para alinhamento, autorização e curadoria do material. Não existe cobrança para entrar nesta fase piloto.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Posso remover meu catálogo depois?</summary>
+      <div class="faq-answer">Sim. Se você quiser retirar o material depois, basta solicitar. A ideia é manter o processo simples, direto e sem burocracia.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Em quanto tempo recebo resposta?</summary>
+      <div class="faq-answer">A proposta é responder rápido, principalmente quando eu estiver online. O contato é direto com o fundador e desenvolvedor do projeto.</div>
+    </details>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- FORM -->
 <section id="contato">
-  <div class="section-label reveal">Quero participar</div>
-  <h2 class="section-title reveal">Entre em<br>contato.</h2>
-  <p class="section-body reveal">Preencha o formulário com seus dados e uma descrição breve do seu contato. A equipe do Sonoriza entra em contato em seguida.</p>
+  <div class="section-label reveal">Autorize seu catálogo</div>
+  <h2 class="section-title reveal">Fale direto<br>com o fundador.</h2>
+  <p class="section-body reveal">Se quiser conversar sobre participação no piloto, autorização de catálogo ou envio de materiais, preencha o formulário. O contato nesta fase é direto com quem constrói o Sonoriza.</p>
 
   <div class="contact-trust-grid reveal">
     <div class="contact-trust-card">
       <div class="contact-trust-title">Entrada manual</div>
-      <div class="contact-trust-text">Seu catálogo é alinhado e inserido pela equipe do Sonoriza.</div>
+      <div class="contact-trust-text">Seu catálogo é alinhado e inserido manualmente no Sonoriza nesta fase do projeto.</div>
     </div>
     <div class="contact-trust-card">
-      <div class="contact-trust-title">Sem compromisso</div>
-      <div class="contact-trust-text">O contato inicial é para entender seu caso e alinhar autorização.</div>
+      <div class="contact-trust-title">Contato direto</div>
+      <div class="contact-trust-text">Nesta fase, você fala diretamente com o fundador e desenvolvedor do projeto.</div>
+    </div>
+    <div class="contact-trust-card">
+      <div class="contact-trust-title">Artista pioneiro</div>
+      <div class="contact-trust-text">Quem entrar cedo pode receber reconhecimento simbólico como pioneiro do catálogo inicial.</div>
     </div>
     <div class="contact-trust-card">
       <div class="contact-trust-title">Saída simples</div>
       <div class="contact-trust-text">Se quiser remover seu material depois, é só solicitar.</div>
-    </div>
-    <div class="contact-trust-card">
-      <div class="contact-trust-title">Retorno da equipe</div>
-      <div class="contact-trust-text">Depois do envio, a gente entra em contato diretamente.</div>
     </div>
   </div>
 
@@ -1799,8 +2651,45 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Sonoriza</div>
-  <div class="footer-note">&copy; 2026 Sonoriza. Todos os direitos reservados.</div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Sonoriza</div>
+      <p class="footer-blurb">Streaming independente em fase piloto, com catálogo em formação, contato direto com o fundador e espaço para artistas que queiram autorizar seu conteúdo no app.</p>
+      <div class="footer-chip-row">
+        <span class="footer-chip">Recife, PE</span>
+        <span class="footer-chip">Catálogo piloto</span>
+        <span class="footer-chip">Contato direto</span>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <div class="footer-heading">Navegar</div>
+      <a class="footer-link" href="#sobre">Sobre o Sonoriza</a>
+      <a class="footer-link" href="#por-que-agora">Por que agora</a>
+      <a class="footer-link" href="#pioneiros">Artistas pioneiros</a>
+      <a class="footer-link" href="#sobre-projeto">Sobre o projeto</a>
+      <a class="footer-link" href="#faq">FAQ</a>
+    </div>
+
+    <div class="footer-column">
+      <div class="footer-heading">Contato</div>
+      <p class="footer-contact-text">Se fizer sentido para você, o próximo passo é falar direto com quem constrói o Sonoriza.</p>
+      <a class="footer-link footer-link-strong" href="#contato">Autorizar meu catálogo</a>
+      <div class="footer-social-row">
+        <a class="footer-link" href="https://www.linkedin.com/in/joseilton-junior/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="footer-link" href="https://www.instagram.com/dvlp.jr/" target="_blank" rel="noreferrer">Instagram do fundador</a>
+        <a class="footer-link" href="https://www.instagram.com/sonoriza.sound/" target="_blank" rel="noreferrer">Instagram do Sonoriza</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-note">&copy; 2026 Sonoriza. Todos os direitos reservados.</div>
+    <div class="footer-bottom-links">
+      <a class="footer-micro-link" href="#contato">Contato direto</a>
+      <a class="footer-micro-link" href="#sobre-projeto">Projeto com base em Recife</a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -1810,6 +2699,7 @@
   const showcaseDots = document.getElementById('showcaseDots');
   const showcasePrev = document.getElementById('showcasePrev');
   const showcaseNext = document.getElementById('showcaseNext');
+  const showcasePanel = document.querySelector('.app-showcase-panel');
   const showcaseMeta = document.getElementById('appShowcaseMeta');
   const showcaseTitle = document.getElementById('appShowcaseTitle');
   const showcaseDescription = document.getElementById('appShowcaseDescription');
@@ -1884,18 +2774,27 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const showcaseInterval = 5000;
 
+  document.documentElement.style.setProperty('--showcase-progress-duration', `${showcaseInterval}ms`);
+
+  function animateShowcasePanel() {
+    if (prefersReducedMotion || !showcasePanel) {
+      return;
+    }
+
+    showcasePanel.classList.remove('is-transitioning');
+    void showcasePanel.offsetWidth;
+    showcasePanel.classList.add('is-transitioning');
+  }
+
   function updateShowcaseContent(index) {
     const slide = showcaseSlides[index];
 
     if (!slide || !showcaseMeta || !showcaseTitle || !showcaseDescription) return;
 
-    const resolvedTitle = index === 5
-      ? 'Engajamento real'
-      : (slide.dataset.title || '');
-
     showcaseMeta.textContent = slide.dataset.meta || '';
-    showcaseTitle.textContent = resolvedTitle;
+    showcaseTitle.textContent = slide.dataset.title || '';
     showcaseDescription.textContent = slide.dataset.description || '';
+    animateShowcasePanel();
   }
 
   function renderShowcase(index) {
@@ -2280,6 +3179,7 @@
     }
 
     submitBtn.disabled = true;
+    submitBtn.classList.add('is-loading');
     submitBtn.textContent = 'Enviando...';
 
     try {
@@ -2323,6 +3223,7 @@
       }
     } finally {
       submitBtn.disabled = false;
+      submitBtn.classList.remove('is-loading');
       submitBtn.textContent = 'Enviar mensagem';
     }
   }
