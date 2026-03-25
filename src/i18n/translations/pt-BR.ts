@@ -129,6 +129,43 @@ const ptBRRaw = {
       button: 'Quero conversar sobre o piloto',
     },
   },
+  vitrine: {
+    label: 'Além do app',
+    title: 'O Sonoriza também evolui como vitrine de descoberta.',
+    body:
+      'Além da reprodução no app, o projeto também está estruturando uma camada de vitrine para destacar artistas, lançamentos, tops e presença editorial dentro do próprio ecossistema Sonoriza.',
+    previewLabel: 'Sonoriza Vitrine',
+    previewStatus: 'Em evolução',
+    previewTitle: 'Mais presença para o catálogo autorizado',
+    previewText:
+      'Destaques editoriais, métricas visíveis, rankings e selos para reforçar a presença do artista dentro da plataforma.',
+    metrics: [
+      { value: '48.2K', label: 'plays' },
+      { value: '3.1K', label: 'curtidas' },
+      { value: '+210', label: 'seguidores' },
+    ],
+    tags: ['Destaque da semana', 'Lançamentos', 'Top artistas', 'Top álbuns', 'Top gêneros', 'Pioneer'],
+    cards: [
+      {
+        title: 'Destaque da semana',
+        text: 'Espaço principal para dar visibilidade editorial a um artista ou projeto dentro da vitrine do Sonoriza.',
+      },
+      {
+        title: 'Scroll de lançamentos',
+        text: 'Área pensada para novos singles, EPs e álbuns entrarem com presença mais clara dentro da navegação principal.',
+      },
+      {
+        title: 'Artista em destaque',
+        text: 'Bloco com métricas e contexto visual para reforçar presença, confiança e evolução do artista dentro do app.',
+      },
+      {
+        title: 'Tops e categorias',
+        text: 'Top músicas, top artistas, top álbuns e exploração por gênero ajudam a transformar o app em descoberta, não só reprodução.',
+      },
+    ],
+    note:
+      'Essa estrutura ainda está em evolução, mas já faz parte da visão do produto: o Sonoriza não é só player, é também uma vitrine de presença e descoberta para artistas autorizados.',
+  },
   whyNow: {
     label: 'Por que agora',
     title: 'Por que vale entrar nesta fase?',
@@ -246,6 +283,33 @@ const ptBRRaw = {
       'Monetização para artistas neste estágio',
     ],
   },
+  policy: {
+    label: 'Direitos e autorização',
+    title: 'Conteúdo autorizado, titularidade preservada.',
+    body:
+      'O Sonoriza já tem uma política institucional específica para direitos autorais, propriedade intelectual, autorização e remoção de conteúdo. Ela ajuda a deixar claro como o catálogo entra, qual é o escopo de uso dentro da plataforma e como o artista pode revogar ou solicitar remoção.',
+    cards: [
+      {
+        title: 'Autorização prévia',
+        text: 'O conteúdo só deve entrar com autorização válida, específica e compatível com o uso pretendido dentro do Sonoriza.',
+      },
+      {
+        title: 'Titularidade preservada',
+        text: 'A publicação no app não transfere a titularidade da obra, do fonograma, da marca, do nome artístico ou da imagem.',
+      },
+      {
+        title: 'Uso dentro da plataforma',
+        text: 'O escopo cobre streaming no app, exibição de capa e metadados, além de cache offline interno sem entrega do arquivo bruto ao usuário final.',
+      },
+      {
+        title: 'Revogação e remoção',
+        text: 'Solicitações legítimas podem levar à indisponibilização preventiva e à remoção operacional do conteúdo, com análise prioritária e canal oficial definido.',
+      },
+    ],
+    primaryAction: 'Ler política completa (PDF)',
+    secondaryAction: 'Canal oficial',
+    secondaryValue: 'contato@appsonoriza.com.br',
+  },
   faq: {
     label: 'FAQ',
     title: 'Dúvidas comuns antes do contato.',
@@ -271,6 +335,11 @@ const ptBRRaw = {
         question: 'Como funciona o acesso às músicas no Sonoriza?',
         answer:
           'Nesta fase, a proposta é receber músicas que o próprio artista autoriza disponibilizar gratuitamente no app. O Sonoriza funciona como plataforma de reprodução e descoberta desse catálogo autorizado, sem se apropriar do conteúdo.',
+      },
+      {
+        question: 'Existe uma política formal de autorização e remoção?',
+        answer:
+          'Sim. O Sonoriza mantém uma política específica sobre direitos autorais, autorização, escopo de uso e remoção de conteúdo, com canal oficial para solicitações, revogações e contestação de titularidade.',
       },
       {
         question: 'Existe custo para participar?',
@@ -362,9 +431,11 @@ const ptBRRaw = {
     navHeading: 'Navegar',
     navLinks: [
       { label: 'Sobre o Sonoriza', href: '#sobre' },
+      { label: 'Sonoriza Vitrine', href: '#vitrine' },
       { label: 'Por que agora', href: '#por-que-agora' },
       { label: 'Artistas pioneiros', href: '#pioneiros' },
       { label: 'Sobre o projeto', href: '#sobre-projeto' },
+      { label: 'Direitos e autorização', href: '#politica' },
       { label: 'FAQ', href: '#faq' },
     ],
     contactHeading: 'Contato',
@@ -380,6 +451,7 @@ const ptBRRaw = {
     bottomLinks: [
       { label: 'Contato direto', href: '#contato' },
       { label: 'Projeto com base em Recife', href: '#sobre-projeto' },
+      { label: 'Política de direitos autorais', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
     ],
   },
   backToTop: 'Voltar ao topo',

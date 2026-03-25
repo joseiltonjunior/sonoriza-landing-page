@@ -108,6 +108,43 @@ const enUS = {
       button: 'I want to talk about the pilot',
     },
   },
+  vitrine: {
+    label: 'Beyond the app',
+    title: 'Sonoriza is also evolving as a discovery showcase.',
+    body:
+      'Beyond playback inside the app, the project is also structuring a showcase layer to highlight artists, releases, rankings, and editorial presence inside the Sonoriza ecosystem.',
+    previewLabel: 'Sonoriza Showcase',
+    previewStatus: 'In progress',
+    previewTitle: 'More presence for the authorized catalog',
+    previewText:
+      'Editorial highlights, visible metrics, rankings, and badges designed to reinforce the artist presence inside the platform.',
+    metrics: [
+      { value: '48.2K', label: 'plays' },
+      { value: '3.1K', label: 'likes' },
+      { value: '+210', label: 'followers' },
+    ],
+    tags: ['Highlight of the week', 'Releases', 'Top artists', 'Top albums', 'Top genres', 'Pioneer'],
+    cards: [
+      {
+        title: 'Highlight of the week',
+        text: 'A main editorial space to give visibility to an artist or project inside the Sonoriza showcase.',
+      },
+      {
+        title: 'Release scroll',
+        text: 'A dedicated area for new singles, EPs, and albums to appear more clearly inside the main navigation.',
+      },
+      {
+        title: 'Featured artist',
+        text: 'A block with metrics and visual context to reinforce presence, trust, and growth inside the app.',
+      },
+      {
+        title: 'Tops and categories',
+        text: 'Top tracks, top artists, top albums, and genre exploration help turn the app into discovery, not only playback.',
+      },
+    ],
+    note:
+      'This structure is still evolving, but it already belongs to the product vision: Sonoriza is not only a player, it is also a showcase of presence and discovery for authorized artists.',
+  },
   whyNow: {
     label: 'Why now',
     title: 'Why is it worth joining at this stage?',
@@ -225,6 +262,33 @@ const enUS = {
       'Monetization for artists at this stage',
     ],
   },
+  policy: {
+    label: 'Rights and authorization',
+    title: 'Authorized content, ownership preserved.',
+    body:
+      'Sonoriza already has an institutional policy focused on copyright, intellectual property, authorization, and content removal. It helps clarify how the catalog enters, what the usage scope is inside the platform, and how the artist can revoke or request removal.',
+    cards: [
+      {
+        title: 'Prior authorization',
+        text: 'Content should only enter with a valid, specific authorization compatible with the intended use inside Sonoriza.',
+      },
+      {
+        title: 'Ownership preserved',
+        text: 'Publishing in the app does not transfer ownership of the work, phonogram, brand, artist name, or image.',
+      },
+      {
+        title: 'Use inside the platform',
+        text: 'The scope covers streaming in the app, cover and metadata display, plus internal offline cache without delivery of the raw file to the end user.',
+      },
+      {
+        title: 'Revocation and removal',
+        text: 'Legitimate requests may lead to preventive unavailability and operational removal, with prioritized review and an official contact channel.',
+      },
+    ],
+    primaryAction: 'Read full policy (PDF)',
+    secondaryAction: 'Official channel',
+    secondaryValue: 'contato@appsonoriza.com.br',
+  },
   faq: {
     label: 'FAQ',
     title: 'Common questions before getting in touch.',
@@ -250,6 +314,11 @@ const enUS = {
         question: 'How does access to music work on Sonoriza?',
         answer:
           'At this stage, the proposal is to receive music that the artist themselves authorizes to be made available for free in the app. Sonoriza works as a playback and discovery platform for this authorized catalog, without taking ownership of the content.',
+      },
+      {
+        question: 'Is there a formal policy for authorization and removal?',
+        answer:
+          'Yes. Sonoriza keeps a dedicated policy covering copyright, authorization, usage scope, and content removal, with an official channel for requests, revocations, and ownership disputes.',
       },
       {
         question: 'Is there any cost to participate?',
@@ -341,9 +410,11 @@ const enUS = {
     navHeading: 'Navigate',
     navLinks: [
       { label: 'About Sonoriza', href: '#sobre' },
+      { label: 'Sonoriza Showcase', href: '#vitrine' },
       { label: 'Why now', href: '#por-que-agora' },
       { label: 'Pioneer artists', href: '#pioneiros' },
       { label: 'About the project', href: '#sobre-projeto' },
+      { label: 'Rights and authorization', href: '#politica' },
       { label: 'FAQ', href: '#faq' },
     ],
     contactHeading: 'Contact',
@@ -358,6 +429,7 @@ const enUS = {
     bottomLinks: [
       { label: 'Direct contact', href: '#contato' },
       { label: 'Project based in Recife', href: '#sobre-projeto' },
+      { label: 'Copyright policy', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
     ],
   },
   backToTop: 'Back to top',

@@ -28,6 +28,11 @@ export function FooterSection({
   copyright,
   bottomLinks,
 }: FooterSectionProps) {
+  const getLinkProps = (href: string) =>
+    href.startsWith('http') || href.startsWith('mailto:') || href.endsWith('.pdf')
+      ? { target: '_blank', rel: 'noreferrer' }
+      : {};
+
   return (
     <footer>
       <div className="footer-grid">
@@ -46,7 +51,7 @@ export function FooterSection({
         <div className="footer-column">
           <div className="footer-heading">{navHeading}</div>
           {navLinks.map((link) => (
-            <a key={link.href} className="footer-link" href={link.href}>
+            <a key={link.href} className="footer-link" href={link.href} {...getLinkProps(link.href)}>
               {link.label}
             </a>
           ))}
@@ -74,7 +79,7 @@ export function FooterSection({
         </div>
         <div className="footer-bottom-links">
           {bottomLinks.map((link) => (
-            <a key={link.href} className="footer-micro-link" href={link.href}>
+            <a key={link.href} className="footer-micro-link" href={link.href} {...getLinkProps(link.href)}>
               {link.label}
             </a>
           ))}

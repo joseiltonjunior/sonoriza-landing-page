@@ -9,9 +9,11 @@ import { HeroSection } from './components/sections/HeroSection';
 import { HowItWorksSection } from './components/sections/HowItWorksSection';
 import { ModelSection } from './components/sections/ModelSection';
 import { Navbar } from './components/sections/Navbar';
+import { PolicySection } from './components/sections/PolicySection';
 import { PioneerSection } from './components/sections/PioneerSection';
 import { ProjectStorySection } from './components/sections/ProjectStorySection';
 import { ShowcaseCtaSection } from './components/sections/ShowcaseCtaSection';
+import { VitrineSection } from './components/sections/VitrineSection';
 import { WhyNowSection } from './components/sections/WhyNowSection';
 import { useI18n } from './i18n';
 import { useRevealOnScroll } from './hooks/useRevealOnScroll';
@@ -89,6 +91,20 @@ export default function App() {
         slides={[...messages.showcase.slides]}
       />
 
+      <VitrineSection
+        label={messages.vitrine.label}
+        title={messages.vitrine.title}
+        body={messages.vitrine.body}
+        previewLabel={messages.vitrine.previewLabel}
+        previewStatus={messages.vitrine.previewStatus}
+        previewTitle={messages.vitrine.previewTitle}
+        previewText={messages.vitrine.previewText}
+        metrics={[...messages.vitrine.metrics]}
+        tags={[...messages.vitrine.tags]}
+        cards={[...messages.vitrine.cards]}
+        note={messages.vitrine.note}
+      />
+
       <ShowcaseCtaSection
         label={messages.showcase.cta.label}
         title={messages.showcase.cta.title}
@@ -135,6 +151,16 @@ export default function App() {
         noLabel={messages.model.noLabel}
         yesItems={messages.model.yesItems}
         noItems={messages.model.noItems}
+      />
+
+      <PolicySection
+        label={messages.policy.label}
+        title={messages.policy.title}
+        body={messages.policy.body}
+        cards={[...messages.policy.cards]}
+        primaryAction={messages.policy.primaryAction}
+        secondaryAction={messages.policy.secondaryAction}
+        secondaryValue={messages.policy.secondaryValue}
       />
 
       <FaqSection
