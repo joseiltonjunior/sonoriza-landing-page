@@ -10,6 +10,11 @@ type ContactSectionProps = {
     title: string;
     text: string;
   }[];
+  accountDeletion: {
+    text: string;
+    cta: string;
+    href: string;
+  };
   form: {
     nameLabel: string;
     phoneLabel: string;
@@ -34,7 +39,7 @@ type ContactSectionProps = {
   };
 };
 
-export function ContactSection({ label, title, body, trustCards, form }: ContactSectionProps) {
+export function ContactSection({ label, title, body, trustCards, accountDeletion, form }: ContactSectionProps) {
   const { locale, messages } = useI18n();
   const contactForm = useContactForm(messages.contact, locale);
 
@@ -53,6 +58,13 @@ export function ContactSection({ label, title, body, trustCards, form }: Contact
             <div className="contact-trust-text">{card.text}</div>
           </div>
         ))}
+      </div>
+
+      <div className="contact-legal-callout reveal">
+        <p className="contact-legal-text">{accountDeletion.text}</p>
+        <a className="policy-link policy-link-secondary" href={accountDeletion.href}>
+          {accountDeletion.cta}
+        </a>
       </div>
 
       <div className={`form-card reveal${contactForm.isSent ? ' sent' : ''}`}>

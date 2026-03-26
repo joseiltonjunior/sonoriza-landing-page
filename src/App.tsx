@@ -169,6 +169,7 @@ function LandingPage() {
         body={messages.policy.body}
         cards={[...messages.policy.cards]}
         documentLinks={[...messages.policy.documentLinks]}
+        accountDeletionAction={messages.policy.accountDeletionAction}
         secondaryAction={messages.policy.secondaryAction}
         secondaryValue={messages.policy.secondaryValue}
       />
@@ -185,6 +186,7 @@ function LandingPage() {
         title={messages.contact.title}
         body={messages.contact.body}
         trustCards={[...messages.contact.trustCards]}
+        accountDeletion={messages.contact.accountDeletion}
         form={messages.contact.form}
       />
 

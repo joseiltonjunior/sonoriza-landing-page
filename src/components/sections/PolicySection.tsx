@@ -12,6 +12,10 @@ type PolicySectionProps = {
     label: string;
     href: string;
   }[];
+  accountDeletionAction: {
+    label: string;
+    href: string;
+  };
   secondaryAction: string;
   secondaryValue: string;
 };
@@ -22,6 +26,7 @@ export function PolicySection({
   body,
   cards,
   documentLinks,
+  accountDeletionAction,
   secondaryAction,
   secondaryValue,
 }: PolicySectionProps) {
@@ -53,6 +58,9 @@ export function PolicySection({
               {link.label}
             </a>
           ))}
+          <a className="policy-link policy-link-secondary" href={accountDeletionAction.href}>
+            {accountDeletionAction.label}
+          </a>
           <a className="policy-link policy-link-secondary" href={`mailto:${secondaryValue}`}>
             {secondaryAction}: {secondaryValue}
           </a>

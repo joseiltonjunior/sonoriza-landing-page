@@ -290,6 +290,10 @@ const enUS = {
       { label: 'Read copyright policy (PDF)', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
       { label: 'Read privacy policy (PDF)', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
     ],
+    accountDeletionAction: {
+      label: 'Request account deletion',
+      href: '/delete-account',
+    },
     secondaryAction: 'Official channel',
     secondaryValue: 'contato@appsonoriza.com.br',
   },
@@ -364,6 +368,11 @@ const enUS = {
         text: 'If you want to remove your material later, just ask.',
       },
     ],
+    accountDeletion: {
+      text: 'Need to handle account and data deletion outside the app? Use the public request page as well.',
+      cta: 'Open account deletion page',
+      href: '/delete-account',
+    },
     form: {
       nameLabel: 'Artist name',
       phoneLabel: 'Contact number',

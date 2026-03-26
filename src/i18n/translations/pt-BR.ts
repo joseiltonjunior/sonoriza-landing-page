@@ -311,6 +311,10 @@ const ptBRRaw = {
       { label: 'Ler política de direitos autorais (PDF)', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
       { label: 'Ler política de privacidade (PDF)', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
     ],
+    accountDeletionAction: {
+      label: 'Solicitar exclusão de conta',
+      href: '/delete-account',
+    },
     secondaryAction: 'Canal oficial',
     secondaryValue: 'contato@appsonoriza.com.br',
   },
@@ -385,6 +389,11 @@ const ptBRRaw = {
         text: 'Se quiser remover seu material depois, é só solicitar.',
       },
     ],
+    accountDeletion: {
+      text: 'Precisa tratar exclusão de conta e dados fora do app? Use também a página pública de solicitação.',
+      cta: 'Abrir página de exclusão de conta',
+      href: '/delete-account',
+    },
     form: {
       nameLabel: 'Nome artístico',
       phoneLabel: 'Número para contato',

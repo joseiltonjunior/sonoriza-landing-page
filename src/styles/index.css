@@ -1429,6 +1429,28 @@
     text-align: left;
   }
 
+  .contact-legal-callout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0 auto 24px;
+    padding: 18px 20px;
+    border: 1px solid rgba(168,85,247,0.16);
+    border-radius: 20px;
+    background:
+      linear-gradient(180deg, rgba(168,85,247,0.08), rgba(255,255,255,0.02)),
+      rgba(15,15,24,0.9);
+    text-align: left;
+  }
+
+  .contact-legal-text {
+    max-width: 680px;
+    color: rgba(248,244,255,0.72);
+    line-height: 1.75;
+  }
+
   .contact-trust-card {
     padding: 18px 18px 16px;
     border-radius: 18px;
@@ -2171,6 +2193,11 @@
 
     .contact-trust-card { padding: 16px 16px 14px; }
 
+    .contact-legal-callout {
+      padding: 16px;
+      border-radius: 18px;
+    }
+
     .form-card {
       padding: 36px 24px;
       border-radius: 20px;
@@ -2458,6 +2485,11 @@
     }
 
     .form-card { padding: 30px 18px; }
+
+    .contact-legal-text {
+      font-size: 14px;
+      line-height: 1.65;
+    }
 
     input,
     textarea,
