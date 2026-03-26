@@ -8,7 +8,10 @@ type PolicySectionProps = {
   title: string;
   body: string;
   cards: readonly PolicyCard[];
-  primaryAction: string;
+  documentLinks: readonly {
+    label: string;
+    href: string;
+  }[];
   secondaryAction: string;
   secondaryValue: string;
 };
@@ -18,7 +21,7 @@ export function PolicySection({
   title,
   body,
   cards,
-  primaryAction,
+  documentLinks,
   secondaryAction,
   secondaryValue,
 }: PolicySectionProps) {
@@ -39,14 +42,17 @@ export function PolicySection({
         </div>
 
         <div className="policy-actions reveal">
-          <a
-            className="policy-link policy-link-primary"
-            href="/docs/sonoriza-politica-direitos-autorais-v6.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {primaryAction}
-          </a>
+          {documentLinks.map((link, index) => (
+            <a
+              key={link.href}
+              className={`policy-link ${index === 0 ? 'policy-link-primary' : 'policy-link-secondary'}`}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {link.label}
+            </a>
+          ))}
           <a className="policy-link policy-link-secondary" href={`mailto:${secondaryValue}`}>
             {secondaryAction}: {secondaryValue}
           </a>

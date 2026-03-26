@@ -158,7 +158,7 @@ export default function App() {
         title={messages.policy.title}
         body={messages.policy.body}
         cards={[...messages.policy.cards]}
-        primaryAction={messages.policy.primaryAction}
+        documentLinks={[...messages.policy.documentLinks]}
         secondaryAction={messages.policy.secondaryAction}
         secondaryValue={messages.policy.secondaryValue}
       />

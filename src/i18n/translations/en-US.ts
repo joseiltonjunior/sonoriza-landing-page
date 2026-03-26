@@ -286,6 +286,10 @@ const enUS = {
       },
     ],
     primaryAction: 'Read full policy (PDF)',
+    documentLinks: [
+      { label: 'Read copyright policy (PDF)', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
+      { label: 'Read privacy policy (PDF)', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
+    ],
     secondaryAction: 'Official channel',
     secondaryValue: 'contato@appsonoriza.com.br',
   },
@@ -427,6 +431,7 @@ const enUS = {
     ],
     copyright: 'All rights reserved.',
     bottomLinks: [
+      { label: 'Privacy policy', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
       { label: 'Direct contact', href: '#contato' },
       { label: 'Project based in Recife', href: '#sobre-projeto' },
       { label: 'Copyright policy', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },

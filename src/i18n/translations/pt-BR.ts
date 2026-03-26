@@ -307,6 +307,10 @@ const ptBRRaw = {
       },
     ],
     primaryAction: 'Ler política completa (PDF)',
+    documentLinks: [
+      { label: 'Ler política de direitos autorais (PDF)', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
+      { label: 'Ler política de privacidade (PDF)', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
+    ],
     secondaryAction: 'Canal oficial',
     secondaryValue: 'contato@appsonoriza.com.br',
   },
@@ -449,6 +453,7 @@ const ptBRRaw = {
     ],
     copyright: 'Todos os direitos reservados.',
     bottomLinks: [
+      { label: 'Política de privacidade', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
       { label: 'Contato direto', href: '#contato' },
       { label: 'Projeto com base em Recife', href: '#sobre-projeto' },
       { label: 'Política de direitos autorais', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
