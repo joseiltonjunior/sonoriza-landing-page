@@ -453,6 +453,7 @@ const ptBRRaw = {
     ],
     copyright: 'Todos os direitos reservados.',
     bottomLinks: [
+      { label: 'Excluir conta', href: '/delete-account' },
       { label: 'Política de privacidade', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
       { label: 'Contato direto', href: '#contato' },
       { label: 'Projeto com base em Recife', href: '#sobre-projeto' },

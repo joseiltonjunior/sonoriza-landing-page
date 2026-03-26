@@ -431,6 +431,7 @@ const enUS = {
     ],
     copyright: 'All rights reserved.',
     bottomLinks: [
+      { label: 'Delete account', href: '/delete-account' },
       { label: 'Privacy policy', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
       { label: 'Direct contact', href: '#contato' },
       { label: 'Project based in Recife', href: '#sobre-projeto' },

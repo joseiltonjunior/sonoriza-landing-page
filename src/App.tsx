@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { DeleteAccountPage } from './components/pages/DeleteAccountPage';
 import { AboutSection } from './components/sections/AboutSection';
 import { AppShowcaseSection } from './components/sections/AppShowcaseSection';
 import { ContactSection } from './components/sections/ContactSection';
@@ -33,7 +34,16 @@ function updateMetaProperty(property: string, content: string) {
   }
 }
 
-export default function App() {
+function getCurrentPath() {
+  if (typeof window === 'undefined') {
+    return '/';
+  }
+
+  const normalizedPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/+$/, '');
+  return normalizedPath || '/';
+}
+
+function LandingPage() {
   const { locale, messages } = useI18n();
   const scrollUi = useScrollUi();
 
@@ -201,4 +211,8 @@ export default function App() {
       </button>
     </div>
   );
+}
+
+export default function App() {
+  return getCurrentPath() === '/delete-account' ? <DeleteAccountPage /> : <LandingPage />;
 }
