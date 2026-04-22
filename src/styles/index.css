@@ -756,6 +756,7 @@
     padding: 24px;
     border-radius: 28px;
     min-height: 100%;
+    min-width: 0;
   }
 
   .vitrine-preview-header {
@@ -2322,6 +2323,33 @@
     }
   }
 
+  @media (max-width: 900px) and (min-width: 769px) {
+    .hero-title {
+      font-size: clamp(52px, 7vw, 80px);
+    }
+
+    .hero-title.hero-title--en {
+      font-size: clamp(48px, 6.2vw, 72px);
+    }
+
+    .vitrine-layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+      padding: 0 12px;
+    }
+
+    .vitrine-wave-band {
+      margin-top: 40px;
+      padding: 56px 28px;
+      border-radius: 28px;
+    }
+
+    .vitrine-wave-title {
+      font-size: clamp(40px, 4.5vw, 60px);
+    }
+  }
+
   @media (max-width: 768px) {
     nav {
       padding: 16px 20px;
@@ -2341,6 +2369,14 @@
     .hero {
       min-height: auto;
       padding: 112px 20px 64px;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 10.5vw, 60px);
+    }
+
+    .hero-title.hero-title--en {
+      font-size: clamp(36px, 9.5vw, 54px);
     }
 
     .hero-badge {
@@ -2629,10 +2665,10 @@
 
     .hero-badge { margin-bottom: 24px; }
 
-    .hero-title { font-size: clamp(44px, 15vw, 64px); }
+    .hero-title { font-size: clamp(34px, 11vw, 48px); }
 
     .hero-title.hero-title--en {
-      font-size: clamp(38px, 13vw, 56px);
+      font-size: clamp(30px, 10vw, 44px);
       padding-inline: 16px;
     }
 
@@ -2770,16 +2806,20 @@
     }
 
     .vitrine-preview-metrics {
-      gap: 8px;
+      gap: 5px;
     }
 
     .vitrine-metric {
-      padding: 12px 10px;
-      border-radius: 16px;
+      padding: 10px 6px;
+      border-radius: 14px;
+      overflow: hidden;
     }
 
     .vitrine-metric strong {
-      font-size: 18px;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .vitrine-metric span,
@@ -2936,10 +2976,10 @@
       text-align: center;
     }
 
-    .hero-title { font-size: clamp(38px, 14vw, 54px); }
+    .hero-title { font-size: clamp(28px, 9.5vw, 38px); }
 
     .hero-title.hero-title--en {
-      font-size: clamp(34px, 12vw, 48px);
+      font-size: clamp(26px, 8.5vw, 34px);
       padding-inline: 14px;
     }
 
