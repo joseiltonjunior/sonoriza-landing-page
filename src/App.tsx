@@ -16,6 +16,7 @@ import { ProjectStorySection } from './components/sections/ProjectStorySection';
 import { ShowcaseCtaSection } from './components/sections/ShowcaseCtaSection';
 import { VitrineSection } from './components/sections/VitrineSection';
 import { WhyNowSection } from './components/sections/WhyNowSection';
+import { WaveDivider } from './components/ui/WaveDivider';
 import { useI18n } from './i18n';
 import { useRevealOnScroll } from './hooks/useRevealOnScroll';
 import { useScrollUi } from './hooks/useScrollUi';
@@ -58,8 +59,8 @@ function LandingPage() {
     updateMetaTag(
       'keywords',
       locale === 'pt-BR'
-        ? 'Sonoriza, streaming, artistas independentes, catálogo musical, landing page, música, app de streaming'
-        : 'Sonoriza, streaming, independent artists, music catalog, landing page, music, streaming app',
+        ? 'Sonoriza, discover musical, Recife, Nordeste, Google Play, playlists, eventos, parceiros, música regional, app de streaming'
+        : 'Sonoriza, music discovery, Recife, Northeast Brazil, Google Play, playlists, events, partners, regional music, streaming app',
     );
     updateMetaTag('twitter:title', messages.meta.title);
     updateMetaTag('twitter:description', messages.meta.twitterDescription);
@@ -87,6 +88,8 @@ function LandingPage() {
         subtitle={messages.hero.subtitle}
         primaryCta={messages.hero.primaryCta}
         secondaryCta={messages.hero.secondaryCta}
+        secondaryHref={messages.hero.secondaryHref}
+        proofs={[...messages.hero.proofs]}
       />
 
       <AboutSection label={messages.about.label} title={messages.about.title} body={messages.about.body} />
@@ -95,10 +98,8 @@ function LandingPage() {
         label={messages.showcase.label}
         title={messages.showcase.title}
         body={messages.showcase.body}
-        previousLabel={messages.showcase.previousLabel}
-        nextLabel={messages.showcase.nextLabel}
-        dotsLabel={messages.showcase.dotsLabel}
-        slides={[...messages.showcase.slides]}
+        demo={messages.showcase.demo}
+        proofs={[...messages.showcase.proofs]}
       />
 
       <VitrineSection
@@ -107,19 +108,25 @@ function LandingPage() {
         body={messages.vitrine.body}
         previewLabel={messages.vitrine.previewLabel}
         previewStatus={messages.vitrine.previewStatus}
+        waveTitle={messages.vitrine.waveTitle}
+        waveText={messages.vitrine.waveText}
         previewTitle={messages.vitrine.previewTitle}
         previewText={messages.vitrine.previewText}
         metrics={[...messages.vitrine.metrics]}
         tags={[...messages.vitrine.tags]}
         cards={[...messages.vitrine.cards]}
         note={messages.vitrine.note}
+        actions={[...messages.vitrine.actions]}
       />
 
       <ShowcaseCtaSection
         label={messages.showcase.cta.label}
         title={messages.showcase.cta.title}
         text={messages.showcase.cta.text}
-        button={messages.showcase.cta.button}
+        primaryButton={messages.showcase.cta.primaryButton}
+        primaryHref={messages.showcase.cta.primaryHref}
+        secondaryButton={messages.showcase.cta.secondaryButton}
+        secondaryHref={messages.showcase.cta.secondaryHref}
       />
 
       <WhyNowSection
@@ -174,21 +181,25 @@ function LandingPage() {
         secondaryValue={messages.policy.secondaryValue}
       />
 
-      <FaqSection
-        label={messages.faq.label}
-        title={messages.faq.title}
-        body={messages.faq.body}
-        items={[...messages.faq.items]}
-      />
+      <WaveDivider />
+      <div className="faq-contact-surface">
+        <FaqSection
+          label={messages.faq.label}
+          title={messages.faq.title}
+          body={messages.faq.body}
+          items={[...messages.faq.items]}
+        />
 
-      <ContactSection
-        label={messages.contact.label}
-        title={messages.contact.title}
-        body={messages.contact.body}
-        trustCards={[...messages.contact.trustCards]}
-        accountDeletion={messages.contact.accountDeletion}
-        form={messages.contact.form}
-      />
+        <ContactSection
+          label={messages.contact.label}
+          title={messages.contact.title}
+          body={messages.contact.body}
+          trustCards={[...messages.contact.trustCards]}
+          accountDeletion={messages.contact.accountDeletion}
+          form={messages.contact.form}
+        />
+      </div>
+      <WaveDivider invert />
 
       <FooterSection
         blurb={messages.footer.blurb}

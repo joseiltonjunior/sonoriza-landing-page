@@ -12,9 +12,16 @@ type HeroSectionProps = {
   subtitle: string;
   primaryCta: string;
   secondaryCta: string;
+  secondaryHref: string;
+  proofs: readonly {
+    label: string;
+    href?: string;
+  }[];
 };
 
-export function HeroSection({ locale, badge, title, subtitle, primaryCta, secondaryCta }: HeroSectionProps) {
+export function HeroSection({ locale, badge, title, subtitle, primaryCta, secondaryCta, secondaryHref, proofs }: HeroSectionProps) {
+  const getLinkProps = (href?: string) => (href && href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {});
+
   return (
     <>
       <div className="hero">
@@ -35,9 +42,23 @@ export function HeroSection({ locale, badge, title, subtitle, primaryCta, second
           <a href="#contato" className="btn-primary">
             {primaryCta}
           </a>
-          <a href="#pioneiros" className="btn-ghost">
+          <a href={secondaryHref} className="btn-ghost" {...getLinkProps(secondaryHref)}>
             {secondaryCta} &rarr;
           </a>
+        </div>
+
+        <div className="hero-proof-row">
+          {proofs.map((proof) =>
+            proof.href ? (
+              <a key={proof.label} className="hero-proof-pill" href={proof.href} {...getLinkProps(proof.href)}>
+                {proof.label}
+              </a>
+            ) : (
+              <span key={proof.label} className="hero-proof-pill">
+                {proof.label}
+              </span>
+            ),
+          )}
         </div>
 
         <div className="soundwave" aria-hidden="true">

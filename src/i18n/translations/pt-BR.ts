@@ -24,11 +24,10 @@ const ptBRRaw = {
   meta: {
     title: 'Sonoriza | Seu som merece ser ouvido',
     description:
-      'Landing page oficial do Sonoriza para apresentar o produto e receber contato de artistas, produções e parceiros interessados em disponibilizar seu catálogo no app.',
+      'Landing page oficial do Sonoriza: app na Google Play em teste fechado, Discover público no ar e curadoria editorial da música do Nordeste com base em Recife.',
     ogDescription:
-      'Conheça o Sonoriza e entre em contato para autorizar seu catálogo, entender o projeto e fazer parte da fase piloto do app.',
-    twitterDescription:
-      'Landing page oficial do Sonoriza para artistas, produções e parceiros.',
+      'Conheça o ecossistema Sonoriza: app Android em teste fechado, Discover público, playlists, tops, eventos, parceiros e contato direto para autorização de catálogo.',
+    twitterDescription: 'App, Discover e curadoria editorial para a música do Nordeste.',
   },
   nav: {
     cta: 'Autorizar catálogo',
@@ -39,154 +38,136 @@ const ptBRRaw = {
     },
   },
   hero: {
-    badge: 'Convite para artistas independentes e regionais',
-    title: ['Seu som', 'merece ser', 'ouvido.'],
+    badge: 'Recife, PE • Google Play em teste fechado • Discover no ar',
+    title: ['Seu som', 'merece mais', 'presença.'],
     subtitle:
-      'O Sonoriza é um app de streaming independente em fase piloto, feito em Recife, com catálogo em curadoria e espaço aberto para artistas que queiram entrar cedo, falar direto com o fundador e ajudar a formar o catálogo inicial.',
+      'O Sonoriza evoluiu para um ecossistema de descoberta musical com base em Recife: app Android já publicado na Google Play em teste fechado, Discover web público, curadoria editorial, tops, playlists, eventos e parceiros com foco na música do Nordeste.',
     primaryCta: 'Quero autorizar meu catálogo',
-    secondaryCta: 'Quero entrar como pioneiro',
+    secondaryCta: 'Conhecer o Discover',
+    secondaryHref: 'https://discover.appsonoriza.com.br/',
+    proofs: [
+      { label: 'App Android na loja', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app' },
+      { label: 'Discover público', href: 'https://discover.appsonoriza.com.br/' },
+      { label: 'Base em Recife, foco no Nordeste', href: '#sobre' },
+    ],
   },
   about: {
     label: 'Sobre o Sonoriza',
-    title: ['Streaming independente,', 'com base no Recife.'],
+    title: ['Descoberta musical,', 'com base em Recife.'],
     body:
-      'O Sonoriza começou em 2023 como um reprodutor local e evoluiu para um app de streaming com recomendações, exploração por gênero, histórico, favoritos e catálogo curado. Nesta fase, a proposta é construir o catálogo inicial com artistas reais, autorização direta e proximidade com a cena local e regional.',
+      'O Sonoriza começou em 2023 como um reprodutor local e hoje conecta app Android, Discover web e curadoria editorial em torno da música do Nordeste. Além da reprodução, o produto já organiza artistas, tops, playlists, eventos e parceiros em uma linguagem própria, com contato direto e proximidade com a cena regional.',
   },
   showcase: {
     label: 'Produto real',
-    title: 'Veja o Sonoriza em funcionamento.',
+    title: 'App publicado, Discover no ar, produto em operação.',
     body:
-      'Algumas telas do app na fase atual do produto. Em vez de prometer no discurso, a ideia aqui é mostrar a experiência real que já existe hoje.',
-    previousLabel: 'Tela anterior',
-    nextLabel: 'Próxima tela',
-    dotsLabel: 'Navegação das telas do app',
-    slides: [
+      'Em vez de prometer no discurso, a ideia aqui é mostrar o que já existe hoje: o app Android em teste fechado na Google Play, o Discover público na web e uma base editorial que já trabalha descoberta, catálogo, ranking e contexto cultural.',
+    demo: {
+      meta: 'Demonstração em vídeo',
+      title: 'Do login até tocar uma música, simples e direto.',
+      description:
+        'Em 15 segundos, o vídeo mostra o app em uso real: login, entrada na home, escolha de faixa e reprodução sem fricção. É uma prova melhor do fluxo do que um conjunto de capturas estáticas.',
+      video: '/assets/videos/sonoriza-app-demo.mp4',
+      poster: '/assets/screens/home.jpeg',
+    },
+    proofs: [
       {
-        meta: 'Tela 01 - Login',
-        title: 'Login e acesso',
-        description:
-          'O app já conta com fluxo de login e acesso, reforçando que o Sonoriza não é só conceito visual: existe uma base funcional em andamento.',
-        fallbackTag: 'Fluxo real',
-        fallbackTitle: 'Login',
-        fallbackText: 'Acesso à conta e entrada no app.',
-        image: '/assets/screens/login.jpeg',
+        eyebrow: 'Google Play',
+        title: 'App Android em teste fechado',
+        text: 'O Sonoriza já entrou na loja com distribuição real, ainda em fase controlada de validação.',
+        href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app',
+        cta: 'Ver na Play Store',
       },
       {
-        meta: 'Tela 02 - Início',
-        title: 'Home e descoberta',
-        description:
-          'A home prova um app vivo: tocados recentemente, mixes inspirados, retomada de reprodução e mini-player ativo na navegação principal.',
-        fallbackTag: 'Catálogo piloto',
-        fallbackTitle: 'Início',
-        fallbackText: 'Retomada de reprodução, mixes e navegação principal.',
-        image: '/assets/screens/home.jpeg',
+        eyebrow: 'Sonoriza Discover',
+        title: 'Camada web pública de descoberta',
+        text: 'O Discover já está no ar com artistas, tops, explorar, páginas editoriais, eventos e parceiros.',
+        href: 'https://discover.appsonoriza.com.br/',
+        cta: 'Abrir Discover',
       },
       {
-        meta: 'Tela 03 - Explorar',
-        title: 'Exploração por gênero',
-        description:
-          'A experiência de descoberta já inclui exploração por estilos e caminhos visuais para expandir o catálogo conforme o produto evolui.',
-        fallbackTag: 'Descoberta',
-        fallbackTitle: 'Explorar',
-        fallbackText: 'Gêneros, categorias e expansão do catálogo.',
-        image: '/assets/screens/explorar.jpeg',
-      },
-      {
-        meta: 'Tela 04 - Artista',
-        title: 'Página do artista',
-        description:
-          'A tela do artista mostra estrutura própria para catálogo, top músicas e discografia, o que ajuda a apresentar o Sonoriza como produto e não só como player.',
-        fallbackTag: 'Catálogo',
-        fallbackTitle: 'Artista',
-        fallbackText: 'Página dedicada com top músicas e discografia.',
-        image: '/assets/screens/artista.jpeg',
-      },
-      {
-        meta: 'Tela 05 - Player',
-        title: 'Playback completo',
-        description:
-          'O player cheio evidencia controles, progresso da faixa, favoritos e uma experiência mais robusta de consumo dentro do app.',
-        fallbackTag: 'Playback',
-        fallbackTitle: 'Player',
-        fallbackText: 'Controles completos, progresso e favoritos.',
-        image: '/assets/screens/player.jpeg',
-      },
-      {
-        meta: 'Tela 06 - Favoritos',
-        title: 'Engajamento real',
-        description:
-          'Favoritos mostram que o app já trabalha com ações persistentes do usuário, reforçando uso contínuo e organização do conteúdo salvo.',
-        fallbackTag: 'Engajamento',
-        fallbackTitle: 'Favoritos',
-        fallbackText: 'Biblioteca, vínculo com o catálogo e uso recorrente.',
-        image: '/assets/screens/favoritos.jpeg',
+        eyebrow: 'Curadoria regional',
+        title: 'Recife como base, Nordeste como recorte',
+        text: 'O produto deixou de falar só de independência genérica e assume a música do Nordeste como eixo editorial.',
+        href: '#sobre-projeto',
+        cta: 'Entender a proposta',
       },
     ],
     cta: {
       label: 'Próximo passo',
-      title: 'Seu catálogo pode entrar cedo nessa história.',
-      text: 'Se o projeto fizer sentido para você, este é o momento de conversar diretamente com quem constrói o Sonoriza, entender a autorização e avaliar sua entrada como artista pioneiro do catálogo inicial.',
-      button: 'Quero conversar sobre o piloto',
+      title: 'Seu catálogo pode entrar em um ecossistema já em operação.',
+      text: 'Se o projeto fizer sentido para você, este é o momento de falar diretamente com quem constrói o Sonoriza e avaliar sua entrada no app, no Discover, em playlists, tops, eventos e campanhas editoriais como o São João.',
+      primaryButton: 'Quero conversar sobre entrada',
+      primaryHref: '#contato',
+      secondaryButton: 'Ver o Discover',
+      secondaryHref: 'https://discover.appsonoriza.com.br/',
     },
   },
   vitrine: {
-    label: 'Além do app',
-    title: 'O Sonoriza também evolui como vitrine de descoberta.',
+    label: 'Discover e editorial',
+    title: 'A camada editorial do Sonoriza já está no ar.',
     body:
-      'Além da reprodução no app, o projeto também está estruturando uma camada de vitrine para destacar artistas, lançamentos, tops e presença editorial dentro do próprio ecossistema Sonoriza.',
-    previewLabel: 'Sonoriza Vitrine',
-    previewStatus: 'Em evolução',
-    previewTitle: 'Mais presença para o catálogo autorizado',
+      'O Discover não é mais só visão de produto. Ele já funciona como face editorial do ecossistema Sonoriza, conectando artistas, playlists, tops, explorar, eventos, parceiros e campanhas sazonais em torno da música do Nordeste.',
+    previewLabel: 'Sonoriza Discover',
+    previewStatus: 'Já no ar',
+    waveTitle: 'A música do Nordeste',
+    waveText:
+      'Discover, artistas, playlists, eventos e parceiros organizados em uma linguagem editorial própria.',
+    previewTitle: 'Descoberta, contexto e presença para a música do Nordeste',
     previewText:
-      'Destaques editoriais, métricas visíveis, rankings e selos para reforçar a presença do artista dentro da plataforma.',
+      'Além do player, o Sonoriza agora organiza relevância cultural: destaque da semana, tops, playlists, eventos do Nordeste, parceiros curatoriais e ativações sazonais como o São João.',
     metrics: [
-      { value: '48.2K', label: 'plays' },
-      { value: '3.1K', label: 'curtidas' },
-      { value: '+210', label: 'seguidores' },
+      { value: 'Fechado', label: 'Google Play' },
+      { value: 'Online', label: 'Discover web' },
+      { value: '2026', label: 'temporada junina' },
     ],
-    tags: ['Destaque da semana', 'Lançamentos', 'Top artistas', 'Top álbuns', 'Top gêneros', 'Pioneer'],
+    tags: ['Destaque da semana', 'Eventos', 'Parceiros', 'Playlists', 'Tops', 'Explorar'],
     cards: [
       {
-        title: 'Destaque da semana',
-        text: 'Espaço principal para dar visibilidade editorial a um artista ou projeto dentro da vitrine do Sonoriza.',
+        title: 'Eventos do Nordeste',
+        text: 'O produto já aponta para calendário cultural, line-ups, playlists oficiais e organização por estado, cidade e temporada.',
       },
       {
-        title: 'Scroll de lançamentos',
-        text: 'Área pensada para novos singles, EPs e álbuns entrarem com presença mais clara dentro da navegação principal.',
+        title: 'Parceiros curatoriais',
+        text: 'Páginas, marcas, produtores e mídias parceiras podem entrar como camada de contexto, recomendação e validação editorial.',
       },
       {
-        title: 'Artista em destaque',
-        text: 'Bloco com métricas e contexto visual para reforçar presença, confiança e evolução do artista dentro do app.',
+        title: 'Temporadas culturais',
+        text: 'A linguagem visual e a curadoria podem abraçar ciclos como o São João sem perder a identidade do Sonoriza nem virar uma festa genérica.',
       },
       {
-        title: 'Tops e categorias',
-        text: 'Top músicas, top artistas, top álbuns e exploração por gênero ajudam a transformar o app em descoberta, não só reprodução.',
+        title: 'Artistas, tops e playlists',
+        text: 'Páginas de artista, tops, explorar e playlists ajudam a transformar o ecossistema em descoberta recorrente, não só reprodução.',
       },
     ],
     note:
-      'Essa estrutura ainda está em evolução, mas já faz parte da visão do produto: o Sonoriza não é só player, é também uma vitrine de presença e descoberta para artistas autorizados.',
+      'Hoje o Sonoriza combina duas provas fortes ao mesmo tempo: o app Android já está na Google Play em teste fechado e o Discover já mostra na web a face editorial, regional e cultural do produto.',
+    actions: [
+      { label: 'Abrir Discover', href: 'https://discover.appsonoriza.com.br/', tone: 'primary' },
+      { label: 'Ver app na Play Store', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app', tone: 'secondary' },
+    ],
   },
   whyNow: {
     label: 'Por que agora',
     title: 'Por que vale entrar nesta fase?',
     body:
-      'Nesta etapa, a proposta não é só disponibilizar música no app. É entrar cedo, com contato direto, ajudar a formar o catálogo e ser lembrado por isso.',
+      'Nesta etapa, a proposta não é só disponibilizar música no app. É entrar enquanto o ecossistema já começa a operar com loja, Discover, editorial regional, eventos, parceiros e campanhas culturais com identidade própria.',
     cards: [
       {
-        title: 'Catálogo em formação',
-        text: 'Quem entra agora participa da fase em que o catálogo inicial ainda está sendo construído e ajuda a moldar o começo do Sonoriza.',
+        title: 'App já entrou na loja',
+        text: 'O Sonoriza já está na Google Play em teste fechado, o que muda o patamar de validação do produto e da distribuição.',
       },
       {
-        title: 'Contato direto com o fundador',
-        text: 'Você fala com quem desenha o produto, conduz a curadoria e faz a ingestão do material nesta fase do projeto.',
+        title: 'Discover público em operação',
+        text: 'Artistas e projetos já podem se conectar a uma camada real de descoberta, com tops, playlists, explorar, eventos e parceiros.',
       },
       {
-        title: 'Entrada assistida',
-        text: 'Não existe painel, integração ou burocracia para configurar agora. O processo é manual, acompanhado e simples para o artista.',
+        title: 'Curadoria regional clara',
+        text: 'O produto assume Recife e a música do Nordeste como eixo editorial, em vez de ficar preso a uma promessa genérica de independência.',
       },
       {
-        title: 'Reconhecimento no app',
-        text: 'Artistas que entram cedo podem receber identificação simbólica de pioneiro e aparecer em áreas de destaque dedicadas dentro do Sonoriza.',
+        title: 'Contato direto e entrada assistida',
+        text: 'Você ainda fala diretamente com quem desenha o produto, conduz a curadoria e acompanha a entrada do material nesta fase.',
       },
     ],
   },
@@ -261,16 +242,16 @@ const ptBRRaw = {
     label: 'O modelo',
     title: ['Honesto sobre', 'o que somos.'],
     body:
-      'Este é um projeto piloto. Não temos promessas impossíveis - temos um produto real, em construção, buscando artistas reais para crescer junto. Nesta fase, a proposta é trabalhar com músicas que o próprio artista deseja disponibilizar gratuitamente para o público dentro do Sonoriza.',
+      'O Sonoriza já não é só uma promessa em piloto cru. Hoje ele combina app Android em teste fechado na Google Play, Discover público e uma camada editorial em evolução, com foco na música do Nordeste. A proposta é crescer com catálogo autorizado, curadoria próxima e presença contextual dentro do ecossistema.',
     yesLabel: 'O que é',
     noLabel: 'O que não é',
     yesItems: [
-      'Plataforma de streaming com app Android funcionando',
-      'Recomendações personalizadas por gênero e histórico',
+      'Ecossistema com app Android, Discover web e curadoria editorial',
+      'Produto já publicado na Google Play em teste fechado',
+      'Camada pública de descoberta com artistas, tops, playlists, eventos e parceiros',
+      'Recorte editorial com base em Recife e foco na música do Nordeste',
       'Catálogo curado, não distribuição em massa',
-      'Canal para músicas autorizadas pelo artista e disponibilizadas gratuitamente no app',
-      'Entrada antecipada no catálogo piloto',
-      'Possibilidade de reconhecimento como artista pioneiro',
+      'Canal para músicas autorizadas pelo artista e contextualizadas no ecossistema',
       'Você autoriza, pode remover quando quiser',
       'Contato direto com o fundador nesta fase',
     ],
@@ -279,7 +260,8 @@ const ptBRRaw = {
       'Painel Sonoriza Creators ou analytics avançado',
       'Promessa de alcance massivo imediato',
       'Contrato com prazo mínimo de permanência',
-      'Plataforma pronta para escala global agora',
+      'Plataforma neutra, sem recorte editorial ou cultural',
+      'Marketplace aberto para qualquer catálogo sem curadoria',
       'Monetização para artistas neste estágio',
     ],
   },
@@ -327,22 +309,37 @@ const ptBRRaw = {
       {
         question: 'Quem pode participar desta fase?',
         answer:
-          'Qualquer artista que queira autorizar a disponibilização do seu conteúdo no Sonoriza e participar da fase inicial do catálogo. Artistas independentes são especialmente bem-vindos nesta etapa.',
+          'Artistas, projetos e parceiros que conversem com a proposta editorial do Sonoriza. O foco deixou de ser só "independente" de forma genérica e passou a assumir com mais clareza a música regional e a cena do Nordeste.',
       },
       {
-        question: 'O que preciso enviar no primeiro contato?',
+        question: 'O Sonoriza hoje é só um conceito ou já está no ar?',
         answer:
-          'No primeiro momento, o ideal é enviar uma descrição breve do que você quer disponibilizar. Depois do alinhamento, podem ser solicitados arquivos das músicas, capa, foto do artista, nome artístico e gêneros.',
+          'O produto já está em operação em duas frentes: o app Android entrou na Google Play em fase de teste fechado e o Discover web já está público com artistas, tops, playlists e exploração editorial.',
       },
       {
         question: 'O Sonoriza é uma distribuidora musical?',
         answer:
-          'Não. O Sonoriza é um app de streaming e reprodução musical, pensado especialmente para a experiência mobile. Nesta fase, a proposta é disponibilizar o conteúdo diretamente dentro do próprio Sonoriza, como mais um canal de presença e escuta para o usuário final.',
+          'Não. O Sonoriza não é distribuidora. Ele funciona como app e camada editorial de descoberta, com entrada curada de catálogo autorizado, contexto cultural e presença dentro do ecossistema.',
       },
       {
-        question: 'Como funciona o acesso às músicas no Sonoriza?',
+        question: 'O que é o Sonoriza Discover?',
         answer:
-          'Nesta fase, a proposta é receber músicas que o próprio artista autoriza disponibilizar gratuitamente no app. O Sonoriza funciona como plataforma de reprodução e descoberta desse catálogo autorizado, sem se apropriar do conteúdo.',
+          'É a face web e editorial do ecossistema Sonoriza. Ali entram destaque da semana, tops, explorar, páginas de artista, playlists, eventos, parceiros e campanhas sazonais que ampliam a descoberta além do player.',
+      },
+      {
+        question: 'Como eventos e parceiros entram na proposta?',
+        answer:
+          'Eventos e parceiros funcionam como contexto editorial. Eles ajudam a conectar artistas, playlists, line-ups, curadorias e temporadas culturais relevantes para a cena nordestina.',
+      },
+      {
+        question: 'O São João entra como tema da marca?',
+        answer:
+          'Como ativação sazonal, sim. A ideia não é transformar o Sonoriza em uma identidade carnavalesca ou genérica, mas usar ciclos culturais como o São João para reforçar descoberta, contexto e linguagem editorial.',
+      },
+      {
+        question: 'O que preciso enviar no primeiro contato?',
+        answer:
+          'No primeiro momento, o ideal é enviar uma descrição breve do que você quer disponibilizar ou construir com o Sonoriza. Depois do alinhamento, podem ser solicitados arquivos das músicas, capa, foto do artista, nome artístico, gêneros e materiais de contexto.',
       },
       {
         question: 'Existe uma política formal de autorização e remoção?',
@@ -350,19 +347,9 @@ const ptBRRaw = {
           'Sim. O Sonoriza mantém uma política específica sobre direitos autorais, autorização, escopo de uso e remoção de conteúdo, com canal oficial para solicitações, revogações e contestação de titularidade.',
       },
       {
-        question: 'Existe custo para participar?',
-        answer:
-          'Não. O contato inicial é para alinhamento, autorização e curadoria do material. Não existe cobrança para entrar nesta fase piloto.',
-      },
-      {
         question: 'Posso remover meu catálogo depois?',
         answer:
-          'Sim. Se você quiser retirar o material depois, basta solicitar. A ideia é manter o processo simples, direto e sem burocracia.',
-      },
-      {
-        question: 'Em quanto tempo recebo resposta?',
-        answer:
-          'A proposta é responder rápido, principalmente quando eu estiver online. O contato é direto com o fundador e desenvolvedor do projeto.',
+          'Sim. Se você quiser retirar o material depois, basta solicitar. A ideia é manter o processo simples, direto e sem burocracia, tanto no app quanto nas superfícies editoriais vinculadas ao produto.',
       },
     ],
   },
@@ -370,23 +357,23 @@ const ptBRRaw = {
     label: 'Autorize seu catálogo',
     title: ['Fale direto', 'com o fundador.'],
     body:
-      'Se quiser conversar sobre participação no piloto, autorização de catálogo ou envio de materiais, preencha o formulário. O contato nesta fase é direto com quem constrói o Sonoriza.',
+      'Se quiser conversar sobre entrada no app, no Discover, em playlists, tops, eventos ou campanhas editoriais, preencha o formulário. O contato nesta fase continua direto com quem constrói o Sonoriza.',
     trustCards: [
       {
-        title: 'Entrada manual',
-        text: 'Seu catálogo é alinhado e inserido manualmente no Sonoriza nesta fase do projeto.',
+        title: 'App na loja',
+        text: 'O Sonoriza já entrou na Google Play em teste fechado, com distribuição real e evolução contínua do produto.',
+      },
+      {
+        title: 'Discover público',
+        text: 'A camada editorial já está no ar com artistas, tops, playlists, eventos e parceiros dentro do ecossistema.',
       },
       {
         title: 'Contato direto',
-        text: 'Nesta fase, você fala diretamente com o fundador e desenvolvedor do projeto.',
-      },
-      {
-        title: 'Artista pioneiro',
-        text: 'Quem entrar cedo pode receber reconhecimento simbólico como pioneiro do catálogo inicial.',
+        text: 'Nesta fase, você fala diretamente com o fundador e desenvolvedor do projeto para alinhar entrada, contexto e curadoria.',
       },
       {
         title: 'Saída simples',
-        text: 'Se quiser remover seu material depois, é só solicitar.',
+        text: 'Se quiser remover seu material depois, é só solicitar. A proposta continua simples e sem burocracia.',
       },
     ],
     accountDeletion: {
@@ -439,12 +426,13 @@ const ptBRRaw = {
   },
   footer: {
     blurb:
-      'Streaming independente em fase piloto, com catálogo em formação, contato direto com o fundador e espaço para artistas que queiram autorizar seu conteúdo no app.',
-    chips: ['Recife, PE', 'Catálogo piloto', 'Contato direto'],
+      'Ecossistema editorial de descoberta musical com base em Recife: app Android na Google Play em teste fechado, Discover público no ar e curadoria focada na música do Nordeste.',
+    chips: ['Recife, PE', 'Discover no ar', 'Google Play fechado', 'Contato direto'],
     navHeading: 'Navegar',
     navLinks: [
       { label: 'Sobre o Sonoriza', href: '#sobre' },
-      { label: 'Sonoriza Vitrine', href: '#vitrine' },
+      { label: 'Sonoriza Discover', href: 'https://discover.appsonoriza.com.br/' },
+      { label: 'Editorial e discovery', href: '#vitrine' },
       { label: 'Por que agora', href: '#por-que-agora' },
       { label: 'Artistas pioneiros', href: '#pioneiros' },
       { label: 'Sobre o projeto', href: '#sobre-projeto' },
@@ -453,7 +441,7 @@ const ptBRRaw = {
     ],
     contactHeading: 'Contato',
     contactText:
-      'Se fizer sentido para você, o próximo passo é falar direto com quem constrói o Sonoriza.',
+      'Se fizer sentido para você, o próximo passo é falar direto com quem constrói o Sonoriza e entender como seu catálogo pode entrar no app e nas superfícies editoriais.',
     contactCta: 'Autorizar meu catálogo',
     socialLinks: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joseilton-junior/' },
@@ -462,9 +450,10 @@ const ptBRRaw = {
     ],
     copyright: 'Todos os direitos reservados.',
     bottomLinks: [
+      { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app' },
+      { label: 'Sonoriza Discover', href: 'https://discover.appsonoriza.com.br/' },
       { label: 'Excluir conta', href: '/delete-account' },
       { label: 'Política de privacidade', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
-      { label: 'Contato direto', href: '#contato' },
       { label: 'Projeto com base em Recife', href: '#sobre-projeto' },
       { label: 'Política de direitos autorais', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
     ],

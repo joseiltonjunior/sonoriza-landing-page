@@ -1,35 +1,25 @@
-import { useShowcase } from '../../hooks/useShowcase';
-
-type ShowcaseSlide = {
-  meta: string;
-  title: string;
-  description: string;
-  fallbackTag: string;
-  fallbackTitle: string;
-  fallbackText: string;
-  image: string;
-};
-
 type AppShowcaseSectionProps = {
   label: string;
   title: string;
   body: string;
-  previousLabel: string;
-  nextLabel: string;
-  dotsLabel: string;
-  slides: readonly ShowcaseSlide[];
+  demo: {
+    meta: string;
+    title: string;
+    description: string;
+    video: string;
+    poster: string;
+  };
+  proofs: readonly {
+    eyebrow: string;
+    title: string;
+    text: string;
+    href: string;
+    cta: string;
+  }[];
 };
 
-export function AppShowcaseSection({
-  label,
-  title,
-  body,
-  previousLabel,
-  nextLabel,
-  dotsLabel,
-  slides,
-}: AppShowcaseSectionProps) {
-  const showcase = useShowcase(slides);
+export function AppShowcaseSection({ label, title, body, demo, proofs }: AppShowcaseSectionProps) {
+  const getLinkProps = (href: string) => (href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {});
 
   return (
     <section className="app-showcase">
@@ -39,43 +29,26 @@ export function AppShowcaseSection({
           <h2 className="section-title">{title}</h2>
           <p className="section-body">{body}</p>
 
-          <div className={`app-showcase-panel${showcase.isTransitioning ? ' is-transitioning' : ''}`}>
-            <div className="app-showcase-meta">{showcase.activeSlide.meta}</div>
-            <h3 className="app-showcase-screen-title">{showcase.activeSlide.title}</h3>
-            <p className="app-showcase-screen-text">{showcase.activeSlide.description}</p>
+          <div className="app-showcase-panel">
+            <div className="app-showcase-meta">{demo.meta}</div>
+            <h3 className="app-showcase-screen-title">{demo.title}</h3>
+            <p className="app-showcase-screen-text">{demo.description}</p>
           </div>
 
-          <div className="app-showcase-nav">
-            <button className="showcase-arrow" type="button" aria-label={previousLabel} onClick={showcase.previous}>
-              &lsaquo;
-            </button>
-            <div className="showcase-dots" aria-label={dotsLabel}>
-              {slides.map((slide, index) => (
-                <button
-                  key={slide.meta}
-                  type="button"
-                  className={`showcase-dot${index === showcase.activeIndex ? ' active' : ''}`}
-                  aria-label={slide.meta}
-                  aria-current={index === showcase.activeIndex}
-                  onClick={() => showcase.goTo(index)}
-                />
-              ))}
-            </div>
-            <button className="showcase-arrow" type="button" aria-label={nextLabel} onClick={showcase.next}>
-              &rsaquo;
-            </button>
+          <div className="app-showcase-proof-grid">
+            {proofs.map((proof) => (
+              <a key={proof.title} className="app-showcase-proof-card" href={proof.href} {...getLinkProps(proof.href)}>
+                <div className="app-showcase-proof-eyebrow">{proof.eyebrow}</div>
+                <div className="app-showcase-proof-title">{proof.title}</div>
+                <p className="app-showcase-proof-text">{proof.text}</p>
+                <span className="app-showcase-proof-link">{proof.cta} &rarr;</span>
+              </a>
+            ))}
           </div>
         </div>
 
         <div className="app-showcase-device-wrap reveal">
-          <div
-            className="phone-shell"
-            onMouseEnter={showcase.pause}
-            onMouseLeave={showcase.resume}
-            onTouchStart={(event) => showcase.onTouchStart(event.changedTouches[0].clientX)}
-            onTouchMove={(event) => showcase.onTouchMove(event.changedTouches[0].clientX)}
-            onTouchEnd={showcase.onTouchEnd}
-          >
+          <div className="phone-shell">
             <span className="phone-side-button phone-side-button-top" aria-hidden="true" />
             <span className="phone-side-button phone-side-button-middle" aria-hidden="true" />
             <span className="phone-side-button phone-side-button-bottom" aria-hidden="true" />
@@ -85,21 +58,17 @@ export function AppShowcaseSection({
               <div className="phone-notch" aria-hidden="true" />
 
               <div className="phone-screen">
-                <div className="showcase-track">
-                  {slides.map((slide, index) => (
-                    <article
-                      key={slide.meta}
-                      className={`showcase-slide${index === showcase.activeIndex ? ' active has-image' : ' has-image'}`}
-                    >
-                      <img className="showcase-slide-image" src={slide.image} alt={slide.meta} />
-                      <div className="showcase-slide-fallback">
-                        <span className="showcase-slide-tag">{slide.fallbackTag}</span>
-                        <strong>{slide.fallbackTitle}</strong>
-                        <span>{slide.fallbackText}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
+                <video
+                  className="showcase-demo-video"
+                  src={demo.video}
+                  poster={demo.poster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                />
               </div>
             </div>
           </div>

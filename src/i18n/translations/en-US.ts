@@ -4,10 +4,10 @@ const enUS = {
   meta: {
     title: 'Sonoriza | Your sound deserves to be heard',
     description:
-      'Official Sonoriza landing page to present the product and receive contact from artists, production teams, and partners interested in making their catalog available in the app.',
+      'Official Sonoriza landing page: Android app on Google Play in closed testing, public Discover live on the web, and editorial curation focused on music from the Northeast of Brazil.',
     ogDescription:
-      'Discover Sonoriza and get in touch to authorize your catalog, understand the project, and join the app pilot phase.',
-    twitterDescription: 'Official Sonoriza landing page for artists, production teams, and partners.',
+      'Discover the Sonoriza ecosystem: Android app in closed testing, public Discover, playlists, tops, events, partners, and direct contact for catalog authorization.',
+    twitterDescription: 'App, Discover, and editorial curation for music from the Northeast of Brazil.',
   },
   nav: {
     cta: 'Authorize catalog',
@@ -18,154 +18,136 @@ const enUS = {
     },
   },
   hero: {
-    badge: 'Invitation for independent and regional artists',
-    title: ['Your sound', 'deserves to be', 'heard.'],
+    badge: 'Recife, PE • Google Play closed testing • Discover live',
+    title: ['Your sound', 'deserves more', 'presence.'],
     subtitle:
-      'Sonoriza is an independent streaming app in pilot phase, built in Recife, with a curated catalog and open space for artists who want to join early, speak directly with the founder, and help shape the initial catalog.',
+      'Sonoriza has evolved into a music discovery ecosystem based in Recife: Android app already published on Google Play in closed testing, public web Discover, editorial curation, tops, playlists, events, and partners focused on music from the Northeast.',
     primaryCta: 'I want to authorize my catalog',
-    secondaryCta: 'I want to join as a pioneer',
+    secondaryCta: 'Explore Discover',
+    secondaryHref: 'https://discover.appsonoriza.com.br/',
+    proofs: [
+      { label: 'Android app on the store', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app' },
+      { label: 'Public Discover live', href: 'https://discover.appsonoriza.com.br/' },
+      { label: 'Based in Recife, focused on the Northeast', href: '#sobre' },
+    ],
   },
   about: {
     label: 'About Sonoriza',
-    title: ['Independent streaming,', 'based in Recife.'],
+    title: ['Music discovery,', 'based in Recife.'],
     body:
-      'Sonoriza started in 2023 as a local player and evolved into a streaming app with recommendations, genre exploration, history, favorites, and a curated catalog. At this stage, the goal is to build the initial catalog with real artists, direct authorization, and close ties to the local and regional scene.',
+      'Sonoriza started in 2023 as a local player and today connects an Android app, public web Discover, and editorial curation around music from the Northeast. Beyond playback, the product already organizes artists, tops, playlists, events, and partners with its own visual language, direct contact, and proximity to the regional scene.',
   },
   showcase: {
     label: 'Real product',
-    title: 'See Sonoriza in action.',
+    title: 'Published app, live Discover, product in operation.',
     body:
-      'These are real screens from the app in its current phase. Instead of promising through copy alone, the goal here is to show the real experience that already exists today.',
-    previousLabel: 'Previous screen',
-    nextLabel: 'Next screen',
-    dotsLabel: 'App screen navigation',
-    slides: [
+      'Instead of relying on promises alone, the goal here is to show what already exists today: the Android app in closed testing on Google Play, the public Discover on the web, and an editorial foundation already working with discovery, catalog, ranking, and cultural context.',
+    demo: {
+      meta: 'Video walkthrough',
+      title: 'From login to playing a song, simple and practical.',
+      description:
+        'In 15 seconds, the video shows the app in real use: login, entry into the home screen, track selection, and playback with low friction. It is a stronger proof of the flow than a stack of static screenshots.',
+      video: '/assets/videos/sonoriza-app-demo.mp4',
+      poster: '/assets/screens/home.jpeg',
+    },
+    proofs: [
       {
-        meta: 'Screen 01 - Login',
-        title: 'Login and access',
-        description:
-          'The app already has a real login flow, reinforcing that Sonoriza is not only a visual concept: there is a functional base already in progress.',
-        fallbackTag: 'Real flow',
-        fallbackTitle: 'Login',
-        fallbackText: 'Account access and app entry.',
-        image: '/assets/screens/login.jpeg',
+        eyebrow: 'Google Play',
+        title: 'Android app in closed testing',
+        text: 'Sonoriza already entered the store with real distribution, still in a controlled validation phase.',
+        href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app',
+        cta: 'View on Play Store',
       },
       {
-        meta: 'Screen 02 - Home',
-        title: 'Home and discovery',
-        description:
-          'The home screen shows a living app: recently played tracks, inspired mixes, playback resume, and an active mini-player in the main navigation.',
-        fallbackTag: 'Pilot catalog',
-        fallbackTitle: 'Home',
-        fallbackText: 'Playback resume, mixes, and main navigation.',
-        image: '/assets/screens/home.jpeg',
+        eyebrow: 'Sonoriza Discover',
+        title: 'Public web discovery layer',
+        text: 'Discover is already live with artists, tops, explore, editorial pages, events, and partners.',
+        href: 'https://discover.appsonoriza.com.br/',
+        cta: 'Open Discover',
       },
       {
-        meta: 'Screen 03 - Explore',
-        title: 'Genre exploration',
-        description:
-          'The discovery experience already includes genre exploration and visual paths to expand the catalog as the product evolves.',
-        fallbackTag: 'Discovery',
-        fallbackTitle: 'Explore',
-        fallbackText: 'Genres, categories, and catalog expansion.',
-        image: '/assets/screens/explorar.jpeg',
-      },
-      {
-        meta: 'Screen 04 - Artist',
-        title: 'Artist page',
-        description:
-          'The artist screen already has its own structure for catalog, top tracks, and discography, helping present Sonoriza as a product and not just a player.',
-        fallbackTag: 'Catalog',
-        fallbackTitle: 'Artist',
-        fallbackText: 'Dedicated page with top tracks and discography.',
-        image: '/assets/screens/artista.jpeg',
-      },
-      {
-        meta: 'Screen 05 - Player',
-        title: 'Full playback',
-        description:
-          'The full player highlights controls, track progress, favorites, and a more robust listening experience inside the app.',
-        fallbackTag: 'Playback',
-        fallbackTitle: 'Player',
-        fallbackText: 'Full controls, progress, and favorites.',
-        image: '/assets/screens/player.jpeg',
-      },
-      {
-        meta: 'Screen 06 - Favorites',
-        title: 'Real engagement',
-        description:
-          'Favorites show that the app already works with persistent user actions, reinforcing continued use and saved-content organization.',
-        fallbackTag: 'Engagement',
-        fallbackTitle: 'Favorites',
-        fallbackText: 'Library, catalog connection, and recurring use.',
-        image: '/assets/screens/favoritos.jpeg',
+        eyebrow: 'Regional curation',
+        title: 'Recife as the base, the Northeast as the lens',
+        text: 'The product no longer speaks only about generic independence and now clearly embraces music from the Northeast as an editorial axis.',
+        href: '#sobre-projeto',
+        cta: 'Understand the direction',
       },
     ],
     cta: {
       label: 'Next step',
-      title: 'Your catalog can join this story early.',
-      text: 'If the project makes sense for you, this is the right moment to speak directly with the person building Sonoriza, understand the authorization flow, and evaluate your entry as a pioneer artist in the initial catalog.',
-      button: 'I want to talk about the pilot',
+      title: 'Your catalog can join an ecosystem already in operation.',
+      text: 'If the project makes sense for you, this is the right moment to speak directly with the person building Sonoriza and evaluate your place inside the app, Discover, playlists, tops, events, and editorial campaigns such as São João.',
+      primaryButton: 'I want to discuss joining',
+      primaryHref: '#contato',
+      secondaryButton: 'View Discover',
+      secondaryHref: 'https://discover.appsonoriza.com.br/',
     },
   },
   vitrine: {
-    label: 'Beyond the app',
-    title: 'Sonoriza is also evolving as a discovery showcase.',
+    label: 'Discover and editorial',
+    title: 'Sonoriza editorial discovery is already live.',
     body:
-      'Beyond playback inside the app, the project is also structuring a showcase layer to highlight artists, releases, rankings, and editorial presence inside the Sonoriza ecosystem.',
-    previewLabel: 'Sonoriza Showcase',
-    previewStatus: 'In progress',
-    previewTitle: 'More presence for the authorized catalog',
+      'Discover is no longer only a product vision. It already works as the editorial face of the Sonoriza ecosystem, connecting artists, playlists, tops, explore, events, partners, and seasonal campaigns around music from the Northeast.',
+    previewLabel: 'Sonoriza Discover',
+    previewStatus: 'Live now',
+    waveTitle: 'Music from the Northeast',
+    waveText:
+      'Discover, artists, playlists, events, and partners organized inside a distinctive editorial language.',
+    previewTitle: 'Discovery, context, and presence for music from the Northeast',
     previewText:
-      'Editorial highlights, visible metrics, rankings, and badges designed to reinforce the artist presence inside the platform.',
+      'Beyond the player, Sonoriza now organizes cultural relevance: highlight of the week, tops, playlists, events from the Northeast, curatorial partners, and seasonal activations such as São João.',
     metrics: [
-      { value: '48.2K', label: 'plays' },
-      { value: '3.1K', label: 'likes' },
-      { value: '+210', label: 'followers' },
+      { value: 'Closed', label: 'Google Play' },
+      { value: 'Online', label: 'Discover web' },
+      { value: '2026', label: 'junina season' },
     ],
-    tags: ['Highlight of the week', 'Releases', 'Top artists', 'Top albums', 'Top genres', 'Pioneer'],
+    tags: ['Highlight of the week', 'Events', 'Partners', 'Playlists', 'Tops', 'Explore'],
     cards: [
       {
-        title: 'Highlight of the week',
-        text: 'A main editorial space to give visibility to an artist or project inside the Sonoriza showcase.',
+        title: 'Events from the Northeast',
+        text: 'The product already points toward cultural calendars, lineups, official playlists, and organization by state, city, and season.',
       },
       {
-        title: 'Release scroll',
-        text: 'A dedicated area for new singles, EPs, and albums to appear more clearly inside the main navigation.',
+        title: 'Curatorial partners',
+        text: 'Pages, brands, producers, and partner media can enter as a context, recommendation, and editorial validation layer.',
       },
       {
-        title: 'Featured artist',
-        text: 'A block with metrics and visual context to reinforce presence, trust, and growth inside the app.',
+        title: 'Seasonal cultural campaigns',
+        text: 'Visual language and curation can embrace cycles such as São João without losing the Sonoriza identity or turning into a generic festive brand.',
       },
       {
-        title: 'Tops and categories',
-        text: 'Top tracks, top artists, top albums, and genre exploration help turn the app into discovery, not only playback.',
+        title: 'Artists, tops, and playlists',
+        text: 'Artist pages, tops, explore, and playlists help turn the ecosystem into recurring discovery, not only playback.',
       },
     ],
     note:
-      'This structure is still evolving, but it already belongs to the product vision: Sonoriza is not only a player, it is also a showcase of presence and discovery for authorized artists.',
+      'Today Sonoriza combines two strong proofs at once: the Android app is already on Google Play in closed testing and Discover already shows the web-facing editorial, regional, and cultural side of the product.',
+    actions: [
+      { label: 'Open Discover', href: 'https://discover.appsonoriza.com.br/', tone: 'primary' },
+      { label: 'View app on Play Store', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app', tone: 'secondary' },
+    ],
   },
   whyNow: {
     label: 'Why now',
     title: 'Why is it worth joining at this stage?',
     body:
-      'At this point, the proposal is not just to make music available in the app. It is to join early, have direct contact, help shape the catalog, and be remembered for that.',
+      'At this point, the proposal is not only to make music available in the app. It is to join while the ecosystem already starts to operate with store presence, live Discover, regional editorial, events, partners, and cultural campaigns with a clear identity.',
     cards: [
       {
-        title: 'Catalog in formation',
-        text: 'Artists who join now take part in the phase where the initial catalog is still being built and help shape the beginning of Sonoriza.',
+        title: 'App already entered the store',
+        text: 'Sonoriza is already on Google Play in closed testing, which raises the level of product validation and distribution maturity.',
       },
       {
-        title: 'Direct contact with the founder',
-        text: 'You talk directly with the person who designs the product, leads the curation, and handles catalog ingestion at this stage.',
+        title: 'Public Discover in operation',
+        text: 'Artists and projects can already connect to a real discovery layer with tops, playlists, explore, events, and partners.',
       },
       {
-        title: 'Assisted onboarding',
-        text: 'There is no dashboard, integration, or setup bureaucracy right now. The process is manual, guided, and simple for the artist.',
+        title: 'Clear regional curation',
+        text: 'The product explicitly embraces Recife and music from the Northeast as an editorial axis instead of staying in a vague independence narrative.',
       },
       {
-        title: 'Recognition inside the app',
-        text: 'Artists who join early may receive symbolic pioneer identification and appear in dedicated highlight areas inside Sonoriza.',
+        title: 'Direct contact and assisted entry',
+        text: 'You still speak directly with the person designing the product, leading curation, and following the material entry during this phase.',
       },
     ],
   },
@@ -240,16 +222,16 @@ const enUS = {
     label: 'The model',
     title: ['Honest about', 'what we are.'],
     body:
-      'This is a pilot project. We do not have impossible promises - we have a real product under construction, looking for real artists to grow together. At this stage, the proposal is to work with tracks that the artist themselves wants to make available for free to the public inside Sonoriza.',
+      'Sonoriza is no longer only an early raw pilot promise. Today it combines an Android app in closed testing on Google Play, a public Discover layer, and an editorial ecosystem still evolving, focused on music from the Northeast. The proposal is to grow through authorized catalog, close curation, and contextual presence inside the product.',
     yesLabel: 'What it is',
     noLabel: 'What it is not',
     yesItems: [
-      'Streaming platform with a working Android app',
-      'Personalized recommendations based on genre and history',
+      'Ecosystem with Android app, web Discover, and editorial curation',
+      'Product already published on Google Play in closed testing',
+      'Public discovery layer with artists, tops, playlists, events, and partners',
+      'Editorial focus based in Recife and centered on music from the Northeast',
       'Curated catalog, not mass distribution',
-      'Channel for music authorized by the artist and made available for free in the app',
-      'Early entry into the pilot catalog',
-      'Possibility of recognition as a pioneer artist',
+      'Channel for music authorized by the artist and contextualized inside the ecosystem',
       'You authorize it and can remove it whenever you want',
       'Direct contact with the founder at this stage',
     ],
@@ -258,7 +240,8 @@ const enUS = {
       'Sonoriza Creators dashboard or advanced analytics',
       'Promise of immediate massive reach',
       'Contract with a minimum stay requirement',
-      'Platform ready for global scale right now',
+      'Neutral platform with no editorial or cultural lens',
+      'Open marketplace for any catalog with no curation',
       'Monetization for artists at this stage',
     ],
   },
@@ -306,22 +289,37 @@ const enUS = {
       {
         question: 'Who can take part in this stage?',
         answer:
-          'Any artist who wants to authorize the availability of their content on Sonoriza and take part in the initial catalog phase. Independent artists are especially welcome at this stage.',
+          'Artists, projects, and partners aligned with the Sonoriza editorial direction. The focus is no longer only generic independence: it now more clearly embraces regional music and the scene from the Northeast.',
       },
       {
-        question: 'What should I send in the first contact?',
+        question: 'Is Sonoriza only a concept or is it already live?',
         answer:
-          'At first, the ideal is to send a brief description of what you want to make available. After alignment, track files, cover art, artist photo, artist name, and genres may be requested.',
+          'The product is already operating on two fronts: the Android app entered Google Play in closed testing and the web Discover is already public with artists, tops, playlists, and editorial exploration.',
       },
       {
         question: 'Is Sonoriza a music distributor?',
         answer:
-          'No. Sonoriza is a streaming and music playback app designed especially for the mobile experience. At this stage, the idea is to make the content available directly inside Sonoriza itself as one more channel of presence and listening for the end user.',
+          'No. Sonoriza is not a distributor. It works as an app and editorial discovery layer, with curated entry of authorized catalog, cultural context, and presence inside the ecosystem.',
       },
       {
-        question: 'How does access to music work on Sonoriza?',
+        question: 'What is Sonoriza Discover?',
         answer:
-          'At this stage, the proposal is to receive music that the artist themselves authorizes to be made available for free in the app. Sonoriza works as a playback and discovery platform for this authorized catalog, without taking ownership of the content.',
+          'It is the web-facing editorial side of the Sonoriza ecosystem. That is where highlight of the week, tops, explore, artist pages, playlists, events, partners, and seasonal campaigns come together to expand discovery beyond the player.',
+      },
+      {
+        question: 'How do events and partners fit into the product?',
+        answer:
+          'Events and partners work as editorial context. They help connect artists, playlists, lineups, curations, and seasonal campaigns that matter to the Northeastern scene.',
+      },
+      {
+        question: 'Does São João become the product theme?',
+        answer:
+          'As a seasonal activation, yes. The idea is not to turn Sonoriza into a generic festive brand, but to use cultural cycles such as São João to strengthen discovery, context, and editorial language.',
+      },
+      {
+        question: 'What should I send in the first contact?',
+        answer:
+          'At first, the ideal is to send a brief description of what you want to make available or build with Sonoriza. After alignment, track files, cover art, artist photo, artist name, genres, and contextual materials may be requested.',
       },
       {
         question: 'Is there a formal policy for authorization and removal?',
@@ -329,19 +327,9 @@ const enUS = {
           'Yes. Sonoriza keeps a dedicated policy covering copyright, authorization, usage scope, and content removal, with an official channel for requests, revocations, and ownership disputes.',
       },
       {
-        question: 'Is there any cost to participate?',
-        answer:
-          'No. The initial contact is for alignment, authorization, and material curation. There is no fee to join this pilot phase.',
-      },
-      {
         question: 'Can I remove my catalog later?',
         answer:
-          'Yes. If you want to remove the material later, just ask. The idea is to keep the process simple, direct, and free of bureaucracy.',
-      },
-      {
-        question: 'How long does it take to get a response?',
-        answer:
-          'The goal is to answer quickly, especially when I am online. The contact is direct with the founder and developer of the project.',
+          'Yes. If you want to remove the material later, just ask. The idea is to keep the process simple, direct, and free of bureaucracy across both the app and the linked editorial surfaces.',
       },
     ],
   },
@@ -349,23 +337,23 @@ const enUS = {
     label: 'Authorize your catalog',
     title: ['Talk directly', 'with the founder.'],
     body:
-      'If you want to talk about taking part in the pilot, catalog authorization, or sending materials, fill out the form. At this stage, the contact is direct with the person building Sonoriza.',
+      'If you want to talk about entering the app, Discover, playlists, tops, events, or editorial campaigns, fill out the form. At this stage, contact is still direct with the person building Sonoriza.',
     trustCards: [
       {
-        title: 'Manual entry',
-        text: 'Your catalog is aligned and inserted manually into Sonoriza during this project phase.',
+        title: 'App on the store',
+        text: 'Sonoriza already entered Google Play in closed testing, with real distribution and continuous product evolution.',
+      },
+      {
+        title: 'Public Discover',
+        text: 'The editorial layer is already live with artists, tops, playlists, events, and partners inside the ecosystem.',
       },
       {
         title: 'Direct contact',
-        text: 'At this stage, you speak directly with the founder and developer of the project.',
-      },
-      {
-        title: 'Pioneer artist',
-        text: 'Artists who join early may receive symbolic recognition as pioneers of the initial catalog.',
+        text: 'At this stage, you speak directly with the founder and developer to align entry, context, and curation.',
       },
       {
         title: 'Easy exit',
-        text: 'If you want to remove your material later, just ask.',
+        text: 'If you want to remove your material later, just ask. The proposal remains simple and bureaucracy-free.',
       },
     ],
     accountDeletion: {
@@ -418,12 +406,13 @@ const enUS = {
   },
   footer: {
     blurb:
-      'Independent streaming in pilot phase, with a catalog in formation, direct contact with the founder, and room for artists who want to authorize their content inside the app.',
-    chips: ['Recife, PE', 'Pilot catalog', 'Direct contact'],
+      'Editorial music-discovery ecosystem based in Recife: Android app on Google Play in closed testing, public Discover live on the web, and curation focused on music from the Northeast.',
+    chips: ['Recife, PE', 'Discover live', 'Google Play closed', 'Direct contact'],
     navHeading: 'Navigate',
     navLinks: [
       { label: 'About Sonoriza', href: '#sobre' },
-      { label: 'Sonoriza Showcase', href: '#vitrine' },
+      { label: 'Sonoriza Discover', href: 'https://discover.appsonoriza.com.br/' },
+      { label: 'Editorial and discovery', href: '#vitrine' },
       { label: 'Why now', href: '#por-que-agora' },
       { label: 'Pioneer artists', href: '#pioneiros' },
       { label: 'About the project', href: '#sobre-projeto' },
@@ -431,7 +420,8 @@ const enUS = {
       { label: 'FAQ', href: '#faq' },
     ],
     contactHeading: 'Contact',
-    contactText: 'If the project makes sense for you, the next step is to speak directly with the person building Sonoriza.',
+    contactText:
+      'If the project makes sense for you, the next step is to speak directly with the person building Sonoriza and understand how your catalog can enter both the app and the editorial surfaces.',
     contactCta: 'Authorize my catalog',
     socialLinks: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joseilton-junior/' },
@@ -440,9 +430,10 @@ const enUS = {
     ],
     copyright: 'All rights reserved.',
     bottomLinks: [
+      { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.sonoriza.app' },
+      { label: 'Sonoriza Discover', href: 'https://discover.appsonoriza.com.br/' },
       { label: 'Delete account', href: '/delete-account' },
       { label: 'Privacy policy', href: '/docs/sonoriza-politica-privacidade-v1.pdf' },
-      { label: 'Direct contact', href: '#contato' },
       { label: 'Project based in Recife', href: '#sobre-projeto' },
       { label: 'Copyright policy', href: '/docs/sonoriza-politica-direitos-autorais-v6.pdf' },
     ],
